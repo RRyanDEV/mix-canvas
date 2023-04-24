@@ -1,0 +1,11 @@
+@import '_reset';
+@import '_vars';
+@import '_box';
+
+body{
+    background-color: $color-bg;
+}
+* {
+    padding: 0%;
+    margin: 0%;
+}
