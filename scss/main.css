@@ -1,3 +1,8 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
 #text {
   height: 30%;
   text-align: justify;
@@ -17,11 +22,118 @@
   flex-direction: column;
 }
 
-body {
-  background-color: #7178AD;
+.cont-models {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-* {
-  padding: 0%;
-  margin: 0%;
+.cardside {
+  display: flex;
+  flex-direction: row;
+}
+
+.models {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cardmodel {
+  width: 300px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7,
+.card8,
+.card9,
+.card10,
+.card11,
+.card12,
+.card13 {
+  background-color: #21409A;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.card2 {
+  background-color: #C2E0AE;
+  color: #000000;
+}
+
+.card3 {
+  background-color: #00AAAD;
+}
+
+.card4 {
+  background-color: #006C3B;
+}
+
+.card5 {
+  background-color: #FFF685;
+  color: #000000;
+}
+
+.card6 {
+  background-color: #ED1C24;
+}
+
+.card7 {
+  background-color: #00B274;
+}
+
+.card8 {
+  background-color: #FCD4D1;
+  color: #000000;
+}
+
+.card9 {
+  background-color: #D4711A;
+}
+
+.card10 {
+  background-color: #72BF44;
+}
+
+.card11 {
+  background-color: #0066B3;
+}
+
+.card12 {
+  background-color: #62A73B;
+}
+
+.card13 {
+  background-color: #7477B8;
+}
+
+.model {
+  padding: 20px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+body {
+  background: rgb(113, 120, 173);
+  background: linear-gradient(81deg, rgb(113, 120, 173) 0%, rgb(53, 58, 97) 70%);
 }/*# sourceMappingURL=main.css.map */

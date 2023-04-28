@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.0.0-230421?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.1.1-230428?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,13 @@
 ## Notas de versão
 
 </a>
+
+### v0.1.1.230428
+
+- Estilização da home page.
+- Criação dos cards onde ficará as perguntas e respostas.
+
+##
 
 ### v0.0.1.230424
 

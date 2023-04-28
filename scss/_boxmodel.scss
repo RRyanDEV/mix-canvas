@@ -1,0 +1,108 @@
+.cont-models {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+.cardside{
+    display: flex;
+    flex-direction: row;
+}
+
+.models {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cardmodel {
+    width: 300px;
+    background-color: $color-default;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7,
+.card8,
+.card9,
+.card10,
+.card11,
+.card12,
+.card13 {
+    background-color: $color-card;
+    color: $color-default;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.card2 {
+    background-color: $color-caard2;
+    color: $dark;
+}
+
+.card3 {
+    background-color: $card3;
+}
+
+.card4 {
+    background-color: $card4;
+}
+
+.card5 {
+    background-color: $card5;
+    color: $dark;
+}
+
+.card6 {
+    background-color: $card6;
+}
+
+.card7 {
+    background-color: $card7;
+}
+
+.card8 {
+    background-color: $card8;
+    color: $dark;
+}
+
+.card9 {
+    background-color: $card9;
+}
+
+.card10 {
+    background-color: $card10;
+}
+
+.card11 {
+    background-color: $card11;
+}
+
+.card12 {
+    background-color: $card12;
+}
+
+.card13 {
+    background-color: $card13;
+}
+
+.model {
+    padding: 20px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}

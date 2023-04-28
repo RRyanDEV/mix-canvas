@@ -1,11 +1,9 @@
 @import '_reset';
 @import '_vars';
 @import '_box';
+@import '_boxmodel';
 
-body{
-    background-color: $color-bg;
-}
-* {
-    padding: 0%;
-    margin: 0%;
+body {
+    background: rgb(113, 120, 173);
+    background: linear-gradient(81deg, rgba(113, 120, 173, 1) 0%, rgba(53, 58, 97, 1) 70%);
 }
