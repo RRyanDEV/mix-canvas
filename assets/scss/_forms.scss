@@ -1,0 +1,26 @@
+.box_input {
+    input {
+        border-radius: 10px;
+        padding: 15px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+    }
+}
+
+.btn {
+    background-color: transparent;
+    align-items: center;
+    border: rgba(0, 0, 0, 0.6) solid;
+    padding: 10px;
+    width: 30%;
+    border-radius: 10px;
+    color: $color-default;
+    font-size: 15px;
+}
+
+.btn:hover {
+    transition: 0.4s;
+    background-color: deepskyblue;
+    cursor: pointer;
+}

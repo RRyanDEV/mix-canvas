@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(113, 120, 173);
+    background: linear-gradient(81deg, rgba(113, 120, 173, 1) 0%, rgba(53, 58, 97, 1) 70%);
+}
+main {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
