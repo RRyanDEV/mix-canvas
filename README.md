@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.2.1-230501?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.2.2-230503?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,15 @@
 ## Notas de versão
 
 </a>
+
+### v0.2.2.230503
+
+- Validação de email no database.
+- Estruturação das variáveis $_POST usando $_SESSION.
+- Ajustes no estilo.
+- Reestruturação dos cards de perguntas.
+
+##
 
 ### v0.2.1.230501
 

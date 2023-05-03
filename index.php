@@ -1,5 +1,6 @@
 <?php
 include_once('./assets/config/config.php');
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ include_once('./assets/config/config.php');
             <div class="box_md">
                 <h1>Informações de Usuário</h1>
                 <div class="formUser">
-                    <form action="" method="POST">
+                    <form action="/pages/formulario.php" method="POST">
                         <div class="box_input">
                             <input type="text" name="nome" id="nome" placeholder="Nome Completo" class="inputUser" required>
                         </div>
