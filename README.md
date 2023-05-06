@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.2.2-230503?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.3.2-230506?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -33,10 +33,20 @@
 
 </a>
 
+### v0.3.2.230506
+
+- Finalizado o primeiro card de pergunta.
+- Animações criadas no background.
+- Ajuste na paleta de cores.
+- Ajuste no tamanho dos elementos.
+- Reestruturação do código.
+
+##
+
 ### v0.2.2.230503
 
 - Validação de email no database.
-- Estruturação das variáveis $_POST usando $_SESSION.
+- Estruturação das variáveis `$_POST` usando `$_SESSION`.
 - Ajustes no estilo.
 - Reestruturação dos cards de perguntas.
 

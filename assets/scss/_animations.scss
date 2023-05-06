@@ -1,0 +1,148 @@
+// Background Animation 
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 5em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+
+// Next Button / Preveious Button
+.arrow {
+    left: 5px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+    transform: scaleX(-1);
+}
+
+.arrow:hover {
+    border: solid 2px white;
+    border-radius: 50%;
+}
+
+.arrow:after {
+    position: absolute;
+    display: block;
+    content: "";
+    color: white;
+    width: 20px;
+    height: 15px;
+    top: -1px;
+    border-bottom: solid 2px;
+    transform: translatex(4px);
+}
+
+.arrow:before {
+    position: absolute;
+    display: block;
+    content: "";
+    color: white;
+    width: 8px;
+    height: 8px;
+    border-top: solid 2px;
+    border-left: solid 2px;
+    top: 50%;
+    left: 2px;
+    transform-origin: 0% 0%;
+    transform: rotatez(-45deg);
+
+}
+
+.arrow:hover:before {
+    animation: aniArrow01 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
+}
+
+.arrow:hover:after {
+    animation: aniArrow02 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
+}
+
+
+@keyframes aniArrow01 {
+    0% {
+        transform: rotatez(-45deg) translateY(30px) translateX(30px);
+    }
+
+    100% {
+        transform: rotatez(-45deg) translateY(-35px) translateX(-35px);
+    }
+}
+
+
+@keyframes aniArrow02 {
+    0% {
+        transform: translateX(45px);
+    }
+
+    100% {
+        transform: translateX(-44px);
+    }
+}
+
+@keyframes borderAni {
+    0% {
+        border: solid 2px white;
+    }
+
+    100% {
+        border: solid 2px white;
+        border-radius: 50%;
+    }
+}

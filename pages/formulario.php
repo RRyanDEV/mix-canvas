@@ -58,9 +58,39 @@ VALUES ('$formnome', '$formemail')
 
 <body>
     <main>
-        <div class="container_md">
-            
-        </div>
+        <form action="/pages/formulario.php" method="POST" class="form">
+            <div class="container_g">
+                <div class="container_mdc">
+                    <div class="cont-model">
+                        <div class="card_side_left">
+                            <div class="card_text">
+                                <div id="title_text">
+                                    <h2>Recursos Chave</h2>
+                                </div>
+                                <div id="subtitle_text">
+                                    <p align="center">São os ativos
+                                        necessários
+                                        para a operação do
+                                        negócio.</p>
+                                    <p align="center">
+                                        Exemplo: equipamentos, tecnologia,
+                                        pessoas,
+                                        capital,
+                                        etc.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_side_right">
+                            <div class="input">
+                                <textarea id="" cols="100" placeholder="" class="area" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </form>
     </main>
 
 
@@ -89,7 +119,11 @@ VALUES ('$formnome', '$formemail')
 
 
 
-
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
 </body>
 
 </html>

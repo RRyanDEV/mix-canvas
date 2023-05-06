@@ -4,10 +4,13 @@
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
-  background: rgb(113, 120, 173);
-  background: linear-gradient(81deg, rgb(113, 120, 173) 0%, rgb(53, 58, 97) 70%);
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(54, 59, 97) 38%, rgb(112, 119, 173) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
 }
 
 main {
@@ -21,15 +24,28 @@ main {
 }
 
 textarea {
+  border-radius: 0px 9px 10px 0px;
+  -webkit-border-radius: 0px 9px 10px 0px;
+  -moz-border-radius: 0px 9px 10px 0px;
   resize: none;
+  height: 100%;
   width: 100%;
   border: none;
-  border-radius: 10px;
   outline: none;
   font-size: 15px;
 }
 
-.container_md {
+.container_g {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container_md, .container_mdc {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -43,6 +59,13 @@ textarea {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.container_mdc {
+  width: 70%;
+  height: 70%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
 .box_md {
   height: -moz-fit-content;
   height: fit-content;
@@ -52,6 +75,11 @@ textarea {
   flex-direction: column;
   display: flex;
   align-items: center;
+}
+
+.form {
+  display: flex;
+  height: 100%;
 }
 
 #text {
@@ -69,9 +97,20 @@ textarea {
   height: 100%;
 }
 
-.card_side_left {
-  border-radius: 10px;
+.card_text {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_side_left {
+  border-radius: 10px 0px 0px 10px;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  height: 100%;
+  width: 100%;
   background-color: #21409A;
 }
 
@@ -85,6 +124,7 @@ textarea {
 }
 
 .cont-model {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -187,6 +227,136 @@ textarea {
   padding: 20px;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.wave {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 5em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(1);
+  }
+}
+.arrow {
+  left: 5px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+
+.arrow:hover {
+  border: solid 2px white;
+  border-radius: 50%;
+}
+
+.arrow:after {
+  position: absolute;
+  display: block;
+  content: "";
+  color: white;
+  width: 20px;
+  height: 15px;
+  top: -1px;
+  border-bottom: solid 2px;
+  transform: translatex(4px);
+}
+
+.arrow:before {
+  position: absolute;
+  display: block;
+  content: "";
+  color: white;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px;
+  border-left: solid 2px;
+  top: 50%;
+  left: 2px;
+  transform-origin: 0% 0%;
+  transform: rotatez(-45deg);
+}
+
+.arrow:hover:before {
+  animation: aniArrow01 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
+}
+
+.arrow:hover:after {
+  animation: aniArrow02 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
+}
+
+@keyframes aniArrow01 {
+  0% {
+    transform: rotatez(-45deg) translateY(30px) translateX(30px);
+  }
+  100% {
+    transform: rotatez(-45deg) translateY(-35px) translateX(-35px);
+  }
+}
+@keyframes aniArrow02 {
+  0% {
+    transform: translateX(45px);
+  }
+  100% {
+    transform: translateX(-44px);
+  }
+}
+@keyframes borderAni {
+  0% {
+    border: solid 2px white;
+  }
+  100% {
+    border: solid 2px white;
+    border-radius: 50%;
+  }
+}
 .box_input input {
   border-radius: 10px;
   padding: 15px;
