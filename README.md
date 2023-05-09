@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.3.2-230506?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.4.2-230508?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v0.4.2.230508
+
+- Feita uma cópia do arquivo `formulario.php`, para `formulario.html`, com intuito de facilitar a visualização da estilização.
+- Adicionado a funcionalidade no botão de avançar.
+- Alteração no estilo do formulário.
+
+##
 
 ### v0.3.2.230506
 

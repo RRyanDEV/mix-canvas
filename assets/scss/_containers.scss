@@ -23,7 +23,10 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.container_mdc {
+.container_mdf {
+    -webkit-box-shadow: 0px 3px 8px 11px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 0px 3px 8px 11px rgba(0, 0, 0, 0.29);
+    box-shadow: 0px 3px 8px 11px rgba(0, 0, 0, 0.29);
     width: 70%;
     height: 70%;
     @extend .container_md;
@@ -41,10 +44,11 @@
     align-items: center;
 }
 
-.form{
+.form {
     display: flex;
     height: 100%;
 }
+
 // Box Models
 #text {
     height: 30%;
