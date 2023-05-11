@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.4.2-230508?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.4.3-230511?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v0.4.3.230511
+
+- Feito um array bidimensional, onde armazena as informações que serão alteradas do formulário. 
+- Criado uma função que gera o esboço do card.
+- Criado uma função que altera as informações do formulário de acordo com o index do array.
+
+##
 
 ### v0.4.2.230508
 

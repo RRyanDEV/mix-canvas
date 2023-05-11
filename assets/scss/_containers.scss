@@ -79,7 +79,74 @@
     -moz-border-radius: 10px 0px 0px 10px;
     height: 100%;
     width: 100%;
-    background-color: $color-card;
+    background-color: $color-default;
+    &_blue {
+        @extend .card_side_left;
+        background-color: $color-card;
+    }
+
+    &_green {
+        @extend .card_side_left;
+        background-color: $card2;
+        color: $dark;
+    }
+
+    &_aquamarine {
+        @extend .card_side_left;
+        background-color: $card3;
+    }
+
+    &_olive {
+        @extend .card_side_left;
+        background-color: $card4;
+    }
+
+    &_yellow {
+        @extend .card_side_left;
+        background-color: $card5;
+        color: $dark;
+    }
+
+    &_red {
+        @extend .card_side_left;
+        background-color: $card6;
+    }
+
+    &_emerald {
+        @extend .card_side_left;
+        background-color: $card7;
+    }
+
+    &_rose {
+        @extend .card_side_left;
+        background-color: $card8;
+        color: $dark;
+    }
+
+    &_orange {
+        @extend .card_side_left;
+        background-color: $card9;
+    }
+
+    &_jade {
+        @extend .card_side_left;
+        background-color: $card10;
+    }
+
+    &_lightblue {
+        @extend .card_side_left;
+        background-color: $card11;
+    }
+
+    &_lawngreen{
+        @extend .card_side_left;
+        background-color: $card12;
+    }
+
+    &_gray {
+        @extend .card_side_left;
+        background-color: $card13;
+    }
 }
 
 .box-user {
@@ -118,79 +185,6 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
-.card,
-.card2,
-.card3,
-.card4,
-.card5,
-.card6,
-.card7,
-.card8,
-.card9,
-.card10,
-.card11,
-.card12,
-.card13 {
-    background-color: $color-card;
-    color: $color-default;
-    padding: 20px;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 18px;
-}
-
-.card2 {
-    background-color: $color-caard2;
-    color: $dark;
-}
-
-.card3 {
-    background-color: $card3;
-}
-
-.card4 {
-    background-color: $card4;
-}
-
-.card5 {
-    background-color: $card5;
-    color: $dark;
-}
-
-.card6 {
-    background-color: $card6;
-}
-
-.card7 {
-    background-color: $card7;
-}
-
-.card8 {
-    background-color: $card8;
-    color: $dark;
-}
-
-.card9 {
-    background-color: $card9;
-}
-
-.card10 {
-    background-color: $card10;
-}
-
-.card11 {
-    background-color: $card11;
-}
-
-.card12 {
-    background-color: $card12;
-}
-
-.card13 {
-    background-color: $card13;
-}
-
 .model {
     padding: 20px;
 }

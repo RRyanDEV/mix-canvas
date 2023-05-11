@@ -106,13 +106,55 @@ textarea {
   align-items: center;
 }
 
-.card_side_left {
+.card_side_left, .card_side_left_gray, .card_side_left_lawngreen, .card_side_left_lightblue, .card_side_left_jade, .card_side_left_orange, .card_side_left_rose, .card_side_left_emerald, .card_side_left_red, .card_side_left_yellow, .card_side_left_olive, .card_side_left_aquamarine, .card_side_left_green, .card_side_left_blue {
   border-radius: 10px 0px 0px 10px;
   -webkit-border-radius: 10px 0px 0px 10px;
   -moz-border-radius: 10px 0px 0px 10px;
   height: 100%;
   width: 100%;
+  background-color: #FFFFFF;
+}
+.card_side_left_blue {
   background-color: #21409A;
+}
+.card_side_left_green {
+  background-color: #C2E0AE;
+  color: #000000;
+}
+.card_side_left_aquamarine {
+  background-color: #00AAAD;
+}
+.card_side_left_olive {
+  background-color: #006C3B;
+}
+.card_side_left_yellow {
+  background-color: #FFF685;
+  color: #000000;
+}
+.card_side_left_red {
+  background-color: #ED1C24;
+}
+.card_side_left_emerald {
+  background-color: #00B274;
+}
+.card_side_left_rose {
+  background-color: #FCD4D1;
+  color: #000000;
+}
+.card_side_left_orange {
+  background-color: #D4711A;
+}
+.card_side_left_jade {
+  background-color: #72BF44;
+}
+.card_side_left_lightblue {
+  background-color: #0066B3;
+}
+.card_side_left_lawngreen {
+  background-color: #62A73B;
+}
+.card_side_left_gray {
+  background-color: #1C1C1C;
 }
 
 .box-user {
@@ -150,78 +192,6 @@ textarea {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-}
-
-.card,
-.card2,
-.card3,
-.card4,
-.card5,
-.card6,
-.card7,
-.card8,
-.card9,
-.card10,
-.card11,
-.card12,
-.card13 {
-  background-color: #21409A;
-  color: #FFFFFF;
-  padding: 20px;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
-}
-
-.card2 {
-  background-color: #C2E0AE;
-  color: #000000;
-}
-
-.card3 {
-  background-color: #00AAAD;
-}
-
-.card4 {
-  background-color: #006C3B;
-}
-
-.card5 {
-  background-color: #FFF685;
-  color: #000000;
-}
-
-.card6 {
-  background-color: #ED1C24;
-}
-
-.card7 {
-  background-color: #00B274;
-}
-
-.card8 {
-  background-color: #FCD4D1;
-  color: #000000;
-}
-
-.card9 {
-  background-color: #D4711A;
-}
-
-.card10 {
-  background-color: #72BF44;
-}
-
-.card11 {
-  background-color: #0066B3;
-}
-
-.card12 {
-  background-color: #62A73B;
-}
-
-.card13 {
-  background-color: #7477B8;
 }
 
 .model {
