@@ -4,6 +4,7 @@
     justify-content: center;
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
@@ -27,7 +28,7 @@
     -webkit-box-shadow: 0px 3px 8px 11px rgba(0, 0, 0, 0.29);
     -moz-box-shadow: 0px 3px 8px 11px rgba(0, 0, 0, 0.29);
     box-shadow: 0px 3px 8px 11px rgba(0, 0, 0, 0.29);
-    width: 70%;
+    width: 50%;
     height: 70%;
     @extend .container_md;
     margin-left: 0%;
@@ -59,26 +60,42 @@
 #user-info {
     display: flex;
 }
-
+#subtitle_text{
+    width: 80%;
+}
+#letter_count{
+    color: $color-default;
+    padding: 5px;
+    align-self: flex-end;
+    font-size: 9px;
+    height: 9px;
+}
 .card_side_right {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
     height: 100%;
+    width: 50%;
 }
 
 .card_text {
     height: 100%;
     display: flex;
+    gap: 10px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
 .card_side_left {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 10px 0px 0px 10px;
     -webkit-border-radius: 10px 0px 0px 10px;
     -moz-border-radius: 10px 0px 0px 10px;
     height: 100%;
-    width: 100%;
+    width: 50%;
     background-color: $color-default;
     &_blue {
         @extend .card_side_left;
@@ -187,6 +204,16 @@
 }
 .model {
     padding: 20px;
+}
+
+.input{
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 50%;
+    margin: auto;
 }
 
 //

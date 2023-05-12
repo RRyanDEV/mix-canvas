@@ -88,7 +88,8 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2)
             </div>
             <div class="card_side_right">
                 <div class="input">
-                    <textarea id="area" name="' . $name . '" cols="100" placeholder="Digite aqui sua resposta" required></textarea>
+                    <textarea id="area" maxlength="1000" onchange="" name="' . $name . '" cols="100" placeholder="Digite aqui sua resposta" required></textarea>
+                    <p id="letter_count"></p>
                 </div>
             </div>
         </div>
@@ -107,7 +108,6 @@ function createComponent($step)
 
 echo createComponent(0);
 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -117,11 +117,22 @@ echo createComponent(0);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="PHP, MySQL, HTML, SASS" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../assets/scss/main.css">
     <title>Document</title>
 </head>
 
 <body>
+<script type="text/javascript"> 
+jQuery(document).on('keyup', 'textarea', updateCount);
+jQuery(document).on('keydown', 'textarea', updateCount);
+
+function updateCount() {
+    let cs = jQuery(this).val().length;
+    const max = `restam ${1000 - cs} caracteres`;
+    jQuery('#letter_count').text(max);
+}
+</script>
     <div>
         <div class="wave"></div>
         <div class="wave"></div>

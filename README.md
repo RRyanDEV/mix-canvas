@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.4.3-230511?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.5.3-230512?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,16 @@
 ## Notas de versão
 
 </a>
+
+### v0.5.3.230512
+
+- Importação de uma nova fonte.
+- Importação da biblioteca do jQuery.
+- Modificação no tamanho e estilo do formulário.
+- Feito um contador de caracteres para resposta do usuário.
+- Correção das variáveis onde é armazenado o valor das respostas.
+
+##
 
 ### v0.4.3.230511
 

@@ -4,19 +4,19 @@ session_start();
 
 
 if (isset($_POST['submit'])) {
-    $_SESSION['recursochave']  = (string)$_POST['recurso'];
-    $_SESSION['propostavalor']  = (string)$_POST['proposta'];
-    $_SESSION['segmentocliente']  = (string)$_POST['segmento'];
-    $_SESSION['parceiroschave']  = (string)$_POST['parceiros'];
-    $_SESSION['problemas']  = (string)$_POST['problems'];
-    $_SESSION['solucao']  = (string)$_POST['solutions'];
-    $_SESSION['relacaocliente']  = (string)$_POST['relacao'];
-    $_SESSION['atividadeschave']  = (string)$_POST['atividade'];
-    $_SESSION['metricas']  = (string)$_POST['metrica'];
-    $_SESSION['canaisdistribuicao']  = (string)$_POST['canais'];
-    $_SESSION['estruturacusto']  = (string)$_POST['estrutura'];
-    $_SESSION['vantagemcompetitiva']  = (string)$_POST['vantagens'];
-    $_SESSION['fontereceita']  = (string)$_POST['fonte'];
+    $_SESSION['recurso']  = (string)$_POST['recursochave'];
+    $_SESSION['proposta']  = (string)$_POST['propostavalor'];
+    $_SESSION['segmento']  = (string)$_POST['segmentocliente'];
+    $_SESSION['parceiros']  = (string)$_POST['parceiroschave'];
+    $_SESSION['problems']  = (string)$_POST['problemas'];
+    $_SESSION['solutions']  = (string)$_POST['solucao'];
+    $_SESSION['relacao']  = (string)$_POST['relacaocliente'];
+    $_SESSION['atividades']  = (string)$_POST['atividadeschave'];
+    $_SESSION['metrica']  = (string)$_POST['metricas'];
+    $_SESSION['canais']  = (string)$_POST['canaisdistribuicao'];
+    $_SESSION['estrutura']  = (string)$_POST['estruturacusto'];
+    $_SESSION['vantagens']  = (string)$_POST['vantagemcompetitiva'];
+    $_SESSION['fonte']  = (string)$_POST['fontereceita'];
 }
 
 mysqli_close($conexao);
