@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.5.3-230512?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.5.4-230522?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,13 @@
 ## Notas de versão
 
 </a>
+
+### v0.5.4.230522
+
+- Primeiro tratamento no backend.
+- Tentativa de adicionar funcionalidade no botão de próximo.
+
+##
 
 ### v0.5.3.230512
 

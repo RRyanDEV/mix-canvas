@@ -40,7 +40,8 @@ VALUES ('$formnome', '$formemail')
 );
 */
 $componentArray = [
-    '0' => ['name' => 'recursochave', 'color' =>  'blue', 'title' => 'Recurso Chave', 'subtitle1' => 'São os ativos necessários para a operação do negócio.', 'subtitle2' =>  'Exemplo: equipamentos, tecnologia, pessoas, capital, etc.'],
+    '0' => ['name' => 'recursochave', 'color' =>  'blue', 'title' => 'Recurso Chave', 'subtitle1' => 'São os ativos necessários para a operação do negócio.', 'subtitle2' =>  'Exemplo: equipamentos, tecnologia, pessoas, capital, etc.
+'],
     '1' => ['name' => 'propostavalor', 'color' =>  'green', 'title' => 'Proposta de Valor', 'subtitle1' => 'É o valor que o produto/serviço oferece para o cliente.', 'subtitle2' =>  'Exemplo: inovação, qualidade, conveniência, etc.
 '],
     '2' => ['name' => 'segmentocliente', 'color' =>  'aquamarine', 'title' => 'Segmento de clientes', 'subtitle1' => 'São os grupos de clientes que a empresa pretende atender.', 'subtitle2' =>  'Exemplo: jovens, idosos, empresas, etc.
@@ -106,6 +107,11 @@ function createComponent($step)
     return formComponent(...$componentProps);
 }
 
+
+if (isset($_POST['submit'])) {
+    echo createComponent(1);
+}
+
 echo createComponent(0);
 
 ?>
@@ -123,16 +129,16 @@ echo createComponent(0);
 </head>
 
 <body>
-<script type="text/javascript"> 
-jQuery(document).on('keyup', 'textarea', updateCount);
-jQuery(document).on('keydown', 'textarea', updateCount);
+    <script type="text/javascript">
+        jQuery(document).on('keyup', 'textarea', updateCount);
+        jQuery(document).on('keydown', 'textarea', updateCount);
 
-function updateCount() {
-    let cs = jQuery(this).val().length;
-    const max = `restam ${1000 - cs} caracteres`;
-    jQuery('#letter_count').text(max);
-}
-</script>
+        function updateCount() {
+            let cs = jQuery(this).val().length;
+            const max = `restam ${1000 - cs} caracteres`;
+            jQuery('#letter_count').text(max);
+        }
+    </script>
     <div>
         <div class="wave"></div>
         <div class="wave"></div>
