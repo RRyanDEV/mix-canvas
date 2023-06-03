@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.5.4-230522?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.5.5-230602?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,15 @@
 ## Notas de versão
 
 </a>
+
+### v0.5.5.230602
+
+- Modificação na variáviel que faz a verificação do index no array.
+- Feito um tratamento em Switch Case, para demonstrar os cards.
+- Criado as variáveis que iram armazenar os valores colocados no formulário.
+- Modificação na forma de exibição dos cards.
+
+##
 
 ### v0.5.4.230522
 

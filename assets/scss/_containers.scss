@@ -60,16 +60,19 @@
 #user-info {
     display: flex;
 }
-#subtitle_text{
+
+#subtitle_text {
     width: 80%;
 }
-#letter_count{
+
+#letter_count {
     color: $color-default;
     padding: 5px;
     align-self: flex-end;
     font-size: 9px;
     height: 9px;
 }
+
 .card_side_right {
     display: flex;
     justify-content: center;
@@ -97,6 +100,7 @@
     height: 100%;
     width: 50%;
     background-color: $color-default;
+
     &_blue {
         @extend .card_side_left;
         background-color: $color-card;
@@ -155,7 +159,7 @@
         background-color: $card11;
     }
 
-    &_lawngreen{
+    &_lawngreen {
         @extend .card_side_left;
         background-color: $card12;
     }
@@ -202,11 +206,12 @@
     border-radius: 10px;
     overflow: hidden;
 }
+
 .model {
     padding: 20px;
 }
 
-.input{
+.input {
     border-radius: 9px;
     display: flex;
     justify-content: center;
@@ -214,6 +219,23 @@
     width: 80%;
     height: 50%;
     margin: auto;
+}
+
+.endparent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .TitleEnd {
+        width: 100%;
+
+        h2 {
+            color: $color-default;
+            text-align: center;
+        }
+
+        padding: 70px 0;
+    }
 }
 
 //

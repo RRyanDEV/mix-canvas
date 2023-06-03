@@ -230,6 +230,20 @@ textarea {
   margin: auto;
 }
 
+.endparent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.endparent .TitleEnd {
+  width: 100%;
+  padding: 70px 0;
+}
+.endparent .TitleEnd h2 {
+  color: #FFFFFF;
+  text-align: center;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 0%;
