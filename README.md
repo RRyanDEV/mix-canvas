@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.5.5-230602?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.5.6-230607?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v0.5.6.230607
+
+- Criado um botão de retorno.
+- Tentativa de adicionar funcionalidade ao botão (Falha❌).
+- Reestruturação de algumas variáveis, usando o `_SESSION`.
+
+##
 
 ### v0.5.5.230602
 

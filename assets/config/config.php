@@ -9,6 +9,10 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
 global $conexao;
 
+
+$returnToPage = "";
+global $returnToPage;
+
 // if ($conexao->connect_errno) {
 //     echo 'ERROOU';
 // } else {

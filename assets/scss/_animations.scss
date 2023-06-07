@@ -85,6 +85,12 @@
     left: -5px;
     @extend .arrow;
     transform: scaleX(1);
+    input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+    }
 }
 
 .arrow:hover {
