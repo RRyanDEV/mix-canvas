@@ -90,13 +90,12 @@ $componentArray = [
 global $componentArray;
 function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevious)
 {
-    $backToStep = ($GLOBALS['step'] > 0) ? ((int)$GLOBALS['step'] - 1) : (0);
     $displayBtnPrevious = ($btnPrevious == "") ? ('style="display:none"') : ('');
     return '<form action="" class="form" method="POST">
 <div class="container_g">
     <div class="' . $btnPrevious . '">
-    <input type="submit" name="submit" value="" ' . $displayBtnPrevious . '>
-    <input type="text" name="backToStep" value="' . $backToStep . '" ' . ' style="display:none">
+    <input type="text" name="backToStep" value="' . $_SESSION['step'] . '" ' . ' style="display:none">
+    <input type="submit" name="back" value="" ' . $displayBtnPrevious . '>
     </div>
     <div class="container_mdf">
         <div class="cont-model">
@@ -113,7 +112,7 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
             </div>
             <div class="card_side_right">
                 <div class="input">
-                    <textarea id="area" maxlength="1000" onchange="" name="' . $name . '" cols="100" placeholder="Digite aqui sua resposta" required></textarea>
+                    <textarea id="txt" maxlength="1000" onchange="" name="' . $name . '" cols="100" placeholder="Digite aqui sua resposta" required></textarea>
                     <p id="letter_count"></p>
                 </div>
             </div>
@@ -127,7 +126,7 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
 }
 function createComponent($arrayIndex)
 {
-    if ($arrayIndex == 13) {
+    if ((int)$arrayIndex == 13) {
         return '<div class="endparent">
         <div class="TitleEnd">
                 <h2>Formulário enviado com sucesso!</h2><div></div>';
@@ -138,143 +137,102 @@ function createComponent($arrayIndex)
 }
 
 if (isset($_POST['submit'])) {
-    $_SESSION['backToStep'] = (string)(isset($_POST['backToStep'])) ?? null;
-    $_SESSION['recurso']  = (string)(isset($_POST['recursochave'])) ?? null;
-    $_SESSION['proposta']  = (string)(isset($_POST['propostavalor'])) ?? null;
-    $_SESSION['segmento']  = (string)(isset($_POST['segmentocliente'])) ?? null;
-    $_SESSION['parceiros']  = (string)(isset($_POST['parceiroschave'])) ?? null;
-    $_SESSION['problems']  = (string)(isset($_POST['problemas'])) ?? null;
-    $_SESSION['solutions']  = (string)(isset($_POST['solucao'])) ?? null;
-    $_SESSION['relacao']  = (string)(isset($_POST['relacaocliente'])) ?? null;
-    $_SESSION['atividades']  = (string)(isset($_POST['atividadeschave'])) ?? null;
-    $_SESSION['metrica']  = (string)(isset($_POST['metricas'])) ?? null;
-    $_SESSION['canais']  = (string)(isset($_POST['canaisdistribuicao'])) ?? null;
-    $_SESSION['estrutura']  = (string)(isset($_POST['estruturacusto'])) ?? null;
-    $_SESSION['vantagens']  = (string)(isset($_POST['vantagemcompetitiva'])) ?? null;
-    $_SESSION['fonte']  = (string)(isset($_POST['fontereceita'])) ?? null;
+    $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
+    if (isset($_POST[$postEntry])) {
+        $_SESSION[$postEntry] = (string)$_POST[$postEntry];
+    }
 }
 
 $doc = new DOMDocument();
 
-$step = 0;
-global $step;
-
-switch (true) {
-    case !empty($_SESSION['fonte']):
-        $GLOBALS['step'] = 13;
-        break;
-    case !empty($_SESSION['vantagens']):
-        $GLOBALS['step'] = 12;
-        break;
-    case !empty($_SESSION['estrutura']):
-        $GLOBALS['step'] = 11;
-        break;
-    case !empty($_SESSION['canais']):
-        $GLOBALS['step'] = 10;
-        break;
-    case !empty($_SESSION['metrica']):
-        $GLOBALS['step'] = 9;
-        break;
-    case !empty($_SESSION['atividades']):
-        $GLOBALS['step'] = 8;
-        break;
-    case !empty($_SESSION['relacao']):
-        $GLOBALS['step'] = 7;
-        break;
-    case !empty($_SESSION['solutions']):
-        $GLOBALS['step'] = 6;
-        break;
-    case !empty($_SESSION['problems']):
-        $GLOBALS['step'] = 5;
-        break;
-    case !empty($_SESSION['parceiros']):
-        $GLOBALS['step'] = 4;
-        break;
-    case !empty($_SESSION['segmento']):
-        $GLOBALS['step'] = 3;
-        break;
-    case !empty($_SESSION['proposta']):
-        $GLOBALS['step'] = 2;
-        break;
-    case !empty($_SESSION['recurso']):
-        $GLOBALS['step'] = 1;
-        break;
-    default:
-        $GLOBALS['step'] = 0;
-        break;
-};
-
 $textValue = " ";
 global $textValue;
 
-if (isset($_POST['submit'])) {
-    $GLOBALS['step'] = $_SESSION['backToStep'];
+if (!isset($_SESSION['step'])) {
+    $_SESSION['step'] = 0;
+}
+
+if (isset($_POST['back'])) {
+    $nextStep = (int)$_SESSION['step']+1;
+    $postEntry = $GLOBALS['componentArray'][$nextStep]['name'];
+    if (isset($_POST[$postEntry])) {
+        $GLOBALS['textValue'] = (string)$_POST[$postEntry];
+    }
+    if ((isset($_POST['backToStep'])) && (int)$_POST['backToStep'] > 1) {
+        $_SESSION['backToStep'] = (int)$_POST['backToStep'] - 1;
+    } else {
+        $_SESSION['backToStep'] = 0;
+    }
+    $_SESSION['step'] = $_SESSION['backToStep'];
+}
+if (isset($_SESSION['backToStep'])) {
+    // echo 'BUCETA DE ECHO'. $_SESSION['backToStep'];
     switch (true) {
-        case $GLOBALS['step'] == 0:
-            $GLOBALS['textValue'] = $_SESSION['recurso'];
+        case $_SESSION['backToStep'] == 0:
+            $GLOBALS['textValue'] = $_SESSION['recursochave'];
             break;
-        case $GLOBALS['step'] == 1:
-            $GLOBALS['textValue'] = $_SESSION['proposta'];
+        case $_SESSION['backToStep'] == 1:
+            $GLOBALS['textValue'] = $_SESSION['propostavalor'];
             break;
-        case $GLOBALS['step'] == 2:
-            $GLOBALS['textValue'] = $_SESSION['segmento'];
+        case $_SESSION['backToStep'] == 2:
+            $GLOBALS['textValue'] = $_SESSION['segmentocliente'];
             break;
-        case $GLOBALS['step'] == 3:
-            $GLOBALS['textValue'] = $_SESSION['parceiros'];
+        case $_SESSION['backToStep'] == 3:
+            $GLOBALS['textValue'] = $_SESSION['parceiroschave'];
             break;
-        case $GLOBALS['step'] == 4:
-            $GLOBALS['textValue'] = $_SESSION['problems'];
+        case $_SESSION['backToStep'] == 4:
+            $GLOBALS['textValue'] = $_SESSION['problemas'];
             break;
-        case $GLOBALS['step'] == 5:
-            $GLOBALS['textValue'] = $_SESSION['solutions'];
+        case $_SESSION['backToStep'] == 5:
+            $GLOBALS['textValue'] = $_SESSION['solucao'];
             break;
-        case $GLOBALS['step'] == 6:
-            $GLOBALS['textValue'] = $_SESSION['relacao'];
+        case $_SESSION['backToStep'] == 6:
+            $GLOBALS['textValue'] = $_SESSION['relacaocliente'];
             break;
-        case $GLOBALS['step'] == 7:
-            $GLOBALS['textValue'] = $_SESSION['atividades'];
+        case $_SESSION['backToStep'] == 7:
+            $GLOBALS['textValue'] = $_SESSION['atividadeschave'];
             break;
-        case $GLOBALS['step'] == 8:
-            $GLOBALS['textValue'] = $_SESSION['metrica'];
+        case $_SESSION['backToStep'] == 8:
+            $GLOBALS['textValue'] = $_SESSION['metricas'];
             break;
-        case $GLOBALS['step'] == 9:
-            $GLOBALS['textValue'] = $_SESSION['canais'];
+        case $_SESSION['backToStep'] == 9:
+            $GLOBALS['textValue'] = $_SESSION['canaisdistribuicao'];
             break;
-        case $GLOBALS['step'] == 10:
-            $GLOBALS['textValue'] = $_SESSION['estrutura'];
+        case $_SESSION['backToStep'] == 10:
+            $GLOBALS['textValue'] = $_SESSION['estruturacusto'];
             break;
-        case $GLOBALS['step'] == 11:
-            $GLOBALS['textValue'] = $_SESSION['vantagens'];
+        case $_SESSION['backToStep'] == 11:
+            $GLOBALS['textValue'] = $_SESSION['vantagemcompetitiva'];
             break;
-        case $GLOBALS['step'] == 12:
-            $GLOBALS['textValue'] = $_SESSION['fonte'];
+        case $_SESSION['backToStep'] == 12:
+            $GLOBALS['textValue'] = $_SESSION['fontereceita'];
             break;
         default:
             $GLOBALS['textValue'] = "";
             break;
     };
-};
-
-$doc->loadHTML('<?xml encoding="utf-8" ?>' . createComponent($GLOBALS['step']));
-
-echo (isset($GLOBALS['textValue'])) ?? null;;
-
-$doc->getElementById('area')->nodeValue = $GLOBALS['textValue'];
-
-
-/*
-if(empty($_SESSION['recurso'])){
-    $doc->loadHTML('<?xml encoding="utf-8" ?>' . createComponent(0));
+    // echo "TextValue " . $GLOBALS['textValue'];
 }
-*/
 
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_POST['submit'])) {
+    $_SESSION['step']++;
+    $nextStep = (int)$_SESSION['step']+1;
+    $postEntry = $GLOBALS['componentArray'][$nextStep]['name'];
+    // echo 'ShERECA ' . $postEntry;
+    if (isset($_POST[$postEntry])) {
+        $GLOBALS['textValue'] = (string)$_POST[$postEntry];
+    }
+    // echo "Step: " . $_SESSION['step'];
+}
 
+$doc->loadHTML('<?xml encoding="utf-8" ?>' . createComponent($_SESSION['step']));
+
+$doc->getElementById('txt')->textContent = $GLOBALS['textValue'];
 
 echo $doc->saveHTML();
 
-
-
-
+// session_destroy();
 function finishForm()
 {
 

@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.5.6-230607?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.5.7-230609?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,15 @@
 ## Notas de versão
 
 </a>
+
+### v0.5.7.230609
+
+- Criado um botão de retorno.
+- Adicionado funcionalidade ao botão de retorno.
+- Tentativa de fazer com que o valor escrito no formulario seja guardado, ao avançar e retroceder.
+- Reestruturado a condição de armazenamento dos valores.
+
+##
 
 ### v0.5.6.230607
 
