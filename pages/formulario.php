@@ -1,12 +1,6 @@
 <?php
 include_once('../assets/config/config.php');
 session_start();
-// if (isset($_POST['submit'])) {
-//     echo ($_POST['nome']);
-//     echo ('<br>');
-//     echo ($_POST['email']);
-//     echo ('<br>');
-// };
 
 /*
 // Condição para verificar se o email já foi usado.
@@ -25,19 +19,6 @@ if (isset($_POST['submit'])) {
         echo ("<script>location.href='../index.php'</script>");
     };
 };
-*/
-
-/*
-// Condição que envia os valores para o banco de dados.
-$formnome = $_SESSION['nome'];
-$formemail = $_SESSION['email'];
-
-mysqli_query(
-    $GLOBALS['conexao'],
-    "INSERT INTO users(username,user_email)
-VALUES ('$formnome', '$formemail')
-"
-);
 */
 
 // Array, onde fica as informações de cada formulário.
@@ -90,6 +71,11 @@ $componentArray = [
 ];
 global $componentArray;
 //
+
+$perguntasArray = array('Recurso Chave', 'Proposta de Valor', 'Segmento de clientes', 'Parceiros chave', 'Problemas', 'Solução', 'Relacionamento com cliente', 'Atividades Chaves', 'Métricas chave', 'Canais de distribuição', 'Estrutura de custo', 'Vantagem competitiva', 'Fonte de receita');
+
+global $perguntasArray;
+
 
 // Função que cria o formulário.
 function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevious)
@@ -166,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if (isset($_POST['submit'])) {
         $_SESSION['step']++;
-        $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
+        $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name']; //Apresenta um erro (Trying to access array offset on value of type null in)
         $_SESSION['textValue'] = $_SESSION[$postEntry];
     }
     if (isset($_POST['back'])) {
@@ -183,20 +169,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $doc->loadHTML('<?xml encoding="utf-8" ?>' . createComponent($_SESSION['step']));
 
-$doc->getElementById('txt')->textContent = $_SESSION['textValue'];
+$doc->getElementById('txt')->textContent = $_SESSION['textValue']; //Apresenta um erro(Uncaught Error: Attempt to assign property "textContent")
+
 
 echo $doc->saveHTML();
 
 // session_destroy();
 function finishForm()
 {
+    /*
+// Condição que envia os valores para o banco de dados.
+    $formnome = $_SESSION['nome'];
+    $formemail = $_SESSION['email'];
 
+    mysqli_query(
+        $GLOBALS['conexao'],
+        "INSERT INTO users(username,user_email) 
+        VALUES ('$formnome', '$formemail')"
+    );
+*/
 
-
-
-
-
-
+    /*
+    $alunoid = $GLOBALS['conexao']->insert_id;
+    foreach ($GLOBALS['perguntasArray'] as $key => $pergunta) {
+        mysqli_query(
+            $GLOBALS['conexao'],
+            "INSERT INTO perguntas(pergunta) 
+            VALUES ('$pergunta')"
+        );
+    }
+*/
 
 
 
