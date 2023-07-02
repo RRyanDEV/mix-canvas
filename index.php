@@ -30,7 +30,7 @@ session_start();
                             <input type="text" name="email" id="email" placeholder="Digite seu Email" class="inputUser" required>
                         </div>
                 </div>
-                <input class="btn" type="submit" name="submit" value="Enviar">
+                <input class="btn" type="submit" name="login" value="Enviar">
             </div>
         </div>
     </main>

@@ -2,9 +2,9 @@
 include_once('../assets/config/config.php');
 session_start();
 
-/*
+
 // Condição para verificar se o email já foi usado.
-if (isset($_POST['submit'])) {
+if (isset($_POST['login'])) {
     $postemail = (string)$_POST['email'];
     $result = mysqli_query(
         $GLOBALS['conexao'],
@@ -19,7 +19,8 @@ if (isset($_POST['submit'])) {
         echo ("<script>location.href='../index.php'</script>");
     };
 };
-*/
+
+    
 
 // Array, onde fica as informações de cada formulário.
 $componentArray = [
@@ -71,11 +72,6 @@ $componentArray = [
 ];
 global $componentArray;
 //
-
-$perguntasArray = array('Recurso Chave', 'Proposta de Valor', 'Segmento de clientes', 'Parceiros chave', 'Problemas', 'Solução', 'Relacionamento com cliente', 'Atividades Chaves', 'Métricas chave', 'Canais de distribuição', 'Estrutura de custo', 'Vantagem competitiva', 'Fonte de receita');
-
-global $perguntasArray;
-
 
 // Função que cria o formulário.
 function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevious)
@@ -150,10 +146,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
+
+    
+    if($_SESSION['step'] == 12 && strlen($_SESSION['fontereceita']) > 0){
+        finishForm();
+    }
+    
+
     if (isset($_POST['submit'])) {
         $_SESSION['step']++;
-        $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name']; //Apresenta um erro (Trying to access array offset on value of type null in)
-        $_SESSION['textValue'] = $_SESSION[$postEntry];
+        if ($_SESSION['step'] != 13) {
+            $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
+            $_SESSION['textValue'] = $_SESSION[$postEntry];
+        }
     }
     if (isset($_POST['back'])) {
         if ((isset($_POST['backToStep'])) && (int)$_POST['backToStep'] > 1) {
@@ -169,15 +174,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $doc->loadHTML('<?xml encoding="utf-8" ?>' . createComponent($_SESSION['step']));
 
-$doc->getElementById('txt')->textContent = $_SESSION['textValue']; //Apresenta um erro(Uncaught Error: Attempt to assign property "textContent")
-
+$element = $doc->getElementById("txt");
+if ($element !== null) {
+    $element->textContent = $_SESSION['textValue'];
+}
 
 echo $doc->saveHTML();
 
-// session_destroy();
+
 function finishForm()
-{
-    /*
+{   
 // Condição que envia os valores para o banco de dados.
     $formnome = $_SESSION['nome'];
     $formemail = $_SESSION['email'];
@@ -187,25 +193,16 @@ function finishForm()
         "INSERT INTO users(username,user_email) 
         VALUES ('$formnome', '$formemail')"
     );
-*/
-
-    /*
-    $alunoid = $GLOBALS['conexao']->insert_id;
-    foreach ($GLOBALS['perguntasArray'] as $key => $pergunta) {
+    $userid = $GLOBALS['conexao']->insert_id;
+    foreach ($GLOBALS['componentArray'] as $item) {
+        $pergunta=$item['title'];
+        $resposta=$_SESSION[$item['name']];
         mysqli_query(
             $GLOBALS['conexao'],
-            "INSERT INTO perguntas(pergunta) 
-            VALUES ('$pergunta')"
+            "INSERT INTO blocos(id_user,pergunta,resposta) 
+            VALUES ($userid , '$pergunta', '$resposta')"
         );
     }
-*/
-
-
-
-
-
-
-
     mysqli_close($GLOBALS['conexao']);
 }
 ?>

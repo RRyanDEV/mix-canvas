@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-0.5.8-230630?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.0.0-230702?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v1.0.0.230702
+
+- Corrigido problemas de envio das informações.
+- Feito uma função, somente para o envio do formulário.
+- Refatoração e Reestruturação do código.
+
+##
 
 ### v0.5.8.230630
 
