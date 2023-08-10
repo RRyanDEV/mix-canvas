@@ -45,10 +45,7 @@
     align-items: center;
 }
 
-.form {
-    display: flex;
-    height: 100%;
-}
+
 
 // Box Models
 #text {
@@ -79,6 +76,7 @@
     flex-direction: column;
     height: 100%;
     width: 50%;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(77,92,107,0.3) 100%);
 }
 
 .card_text {
