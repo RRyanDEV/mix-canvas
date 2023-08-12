@@ -54,6 +54,10 @@ span {
   color: #2f2f2f;
 }
 
+a {
+  text-decoration: none;
+}
+
 .containerLogin {
   align-items: center;
   display: flex;
@@ -68,7 +72,12 @@ span {
   }
 }
 
-.btn-login {
+.buttons-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttons-login .btn-login, .buttons-login .btn-register {
   align-items: center;
   background: #0066B3;
   border-radius: 3px;
@@ -80,15 +89,54 @@ span {
   padding: 15px 45px;
   transition: 0.2s;
 }
-.btn-login:hover {
+.buttons-login .btn-login:hover, .buttons-login .btn-register:hover {
   background: #2036de;
   transform: translateY(-2px);
 }
-.btn-login .fas.fa-arrow-right {
+.buttons-login .btn-login .fas.fa-arrow-right, .buttons-login .btn-register .fas.fa-arrow-right {
   color: #FFFFFF;
   font-size: 12px;
   line-height: 12px;
   margin: 0 0 0 10px;
+}
+.buttons-login .btn-register {
+  background-color: #1C1C1C;
+}
+.buttons-login .btn-register:hover {
+  background: #555;
+}
+
+.modal .btn-login, .modal .buttons-login .btn-register, .buttons-login .modal .btn-register {
+  align-items: center;
+  background: #0066B3;
+  border-radius: 3px;
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  padding: 15px 45px;
+  transition: 0.2s;
+}
+.modal .btn-login:hover, .modal .buttons-login .btn-register:hover, .buttons-login .modal .btn-register:hover {
+  background: #2036de;
+  transform: translateY(-2px);
+}
+.modal .btn-login .fas.fa-arrow-right, .modal .buttons-login .btn-register .fas.fa-arrow-right, .buttons-login .modal .btn-register .fas.fa-arrow-right {
+  color: #FFFFFF;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0 0 0 10px;
+}
+
+#ex1 {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  box-shadow: none;
+  justify-content: center;
 }
 
 .register,
@@ -129,7 +177,7 @@ span {
 .register .form,
 .login .form {
   margin-top: 30px;
-  padding: 0 20px;
+  padding: 0 0px;
 }
 .register .form .form-row,
 .login .form .form-row {
@@ -243,14 +291,14 @@ span {
 .register .form .form-row .button-login {
   margin-top: 20px;
 }
-.register .btn-login {
+.register .btn-login, .register .buttons-login .btn-register, .buttons-login .register .btn-register {
   background: #FFFFFF;
   color: #555;
 }
-.register .btn-login .fas.fa-arrow-right {
+.register .btn-login .fas.fa-arrow-right, .register .buttons-login .btn-register .fas.fa-arrow-right, .buttons-login .register .btn-register .fas.fa-arrow-right {
   color: #555;
 }
-.register .btn-login:hover {
+.register .btn-login:hover, .register .buttons-login .btn-register:hover, .buttons-login .register .btn-register:hover {
   background: #d5d7de;
 }
 .register .create-account {

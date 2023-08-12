@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.1.0-230810?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.2.0-230812?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,13 @@
 ## Notas de versão
 
 </a>
+
+### v1.2.0.230812
+
+- Update na tela principal, sendo adicionado um modal, para tela de cadastro.
+- Update na logo e nome da página do projeto.
+
+##
 
 ### v1.1.0.230810
 
