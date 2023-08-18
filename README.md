@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.2.0-230812?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.2.1-230818?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,15 @@
 ## Notas de versão
 
 </a>
+
+### v1.2.1.230818
+
+- Adicionado uma dashboard para visualização das informações preenchidas.
+- Sistema de login/cadastro adicionado e rodando.
+- Reestruturação de pastas e arquivos.
+- Criado um pasta contendo o database utilizado no projeto. `OBS: Ser usado localmente`
+
+##
 
 ### v1.2.0.230812
 

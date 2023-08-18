@@ -2,26 +2,6 @@
 include_once('../assets/config/config.php');
 session_start();
 
-
-// Condição para verificar se o email já foi usado.
-if (isset($_POST['login'])) {
-    $postemail = (string)$_POST['email'];
-    $result = mysqli_query(
-        $GLOBALS['conexao'],
-        "SELECT user_email FROM users WHERE user_email='$postemail'"
-    );
-    $result = (mysqli_fetch_array($result));
-    if (empty($result)) {
-        $_SESSION['nome'] = (string)$_POST['nome'];
-        $_SESSION['email'] = $postemail;
-    } else {
-        echo ("<script>alert('Usuário já preencheu esse formulário!')</script>");
-        echo ("<script>location.href='../index.php'</script>");
-    };
-};
-
-    
-
 // Array, onde fica as informações de cada formulário.
 $componentArray = [
     '0' => [
@@ -185,14 +165,6 @@ echo $doc->saveHTML();
 function finishForm()
 {   
 // Condição que envia os valores para o banco de dados.
-    $formnome = $_SESSION['nome'];
-    $formemail = $_SESSION['email'];
-
-    mysqli_query(
-        $GLOBALS['conexao'],
-        "INSERT INTO users(username,user_email) 
-        VALUES ('$formnome', '$formemail')"
-    );
     $userid = $GLOBALS['conexao']->insert_id;
     foreach ($GLOBALS['componentArray'] as $item) {
         $pergunta=$item['title'];
@@ -218,8 +190,9 @@ function finishForm()
     <meta name="keywords" content="PHP, MySQL, HTML, SASS" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="icon" href="../assets/img/site-logo.png" />
     <link rel="stylesheet" href="../assets/scss/main.css">
-    <title>Document</title>
+    <title>Questionário</title>
 </head>
 
 <body>
