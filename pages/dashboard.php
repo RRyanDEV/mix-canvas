@@ -15,7 +15,7 @@ include("../assets/config/auth_session.php");
     <title>Model Canvas - Dashboard</title>
     <!-- Link's -->
     <link rel="stylesheet" href="../assets/scss/main.css">
-    <link rel="icon" href="./assets/img/site-logo.png" />
+    <link rel="icon" href="../assets/img/site-logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
@@ -26,7 +26,21 @@ include("../assets/config/auth_session.php");
 </head>
 
 <body>
-    EITA CARALHO
+    <nav>
+        <div class="navback">
+            <div class="userinfo">
+                <div id="usericon" onclick="myFunction()">
+                    <img class="userimg" src="../assets/img/user-icon.png">
+                </div>
+                <div id="usertext">
+                    <p>Olá, <?php echo $_SESSION['email']; ?></p>
+                </div>
+            </div>
+            <div class="logoutButton">
+                <p><a href="../assets/config/logout.php">Sair</a></p>
+            </div>
+        </div>
+    </nav>
 </body>
 
 </html>

@@ -127,11 +127,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    
-    if($_SESSION['step'] == 12 && strlen($_SESSION['fontereceita']) > 0){
+
+    if ($_SESSION['step'] == 12 && strlen($_SESSION['fontereceita']) > 0) {
         finishForm();
     }
-    
+
 
     if (isset($_POST['submit'])) {
         $_SESSION['step']++;
@@ -163,12 +163,12 @@ echo $doc->saveHTML();
 
 
 function finishForm()
-{   
-// Condição que envia os valores para o banco de dados.
+{
+    // Condição que envia os valores para o banco de dados.
     $userid = $GLOBALS['conexao']->insert_id;
     foreach ($GLOBALS['componentArray'] as $item) {
-        $pergunta=$item['title'];
-        $resposta=$_SESSION[$item['name']];
+        $pergunta = $item['title'];
+        $resposta = $_SESSION[$item['name']];
         mysqli_query(
             $GLOBALS['conexao'],
             "INSERT INTO blocos(id_user,pergunta,resposta) 
@@ -190,8 +190,8 @@ function finishForm()
     <meta name="keywords" content="PHP, MySQL, HTML, SASS" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link rel="icon" href="../assets/img/site-logo.png" />
     <link rel="stylesheet" href="../assets/scss/main.css">
+    <link rel="icon" href="../assets/img/site-logo.png" />
     <title>Questionário</title>
 </head>
 

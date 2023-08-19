@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.2.1-230818?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.2.2-230819?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,16 @@
 ## Notas de versão
 
 </a>
+
+### v1.2.2.230819
+
+- Modificações na dashboard.
+- Schema do database atualizado.
+- Corrigido problema de autenticação do usuário.
+- Novo layout de barra de navegação para a dashboard.
+- Corrigido para onde redirecionava ao finalizar sessão.
+
+##
 
 ### v1.2.1.230818
 
