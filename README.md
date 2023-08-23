@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.2.2-230819?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.3.2-230822?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,12 @@
 ## Notas de versão
 
 </a>
+
+### v1.3.2.230822
+
+- Modificações na dashboard.
+
+##
 
 ### v1.2.2.230819
 

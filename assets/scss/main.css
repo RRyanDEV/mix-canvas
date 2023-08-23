@@ -18,10 +18,7 @@ main {
   align-self: center;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: 90vh;
 }
 
 textarea {
@@ -88,11 +85,16 @@ a {
   justify-content: center;
 }
 
-.logoutButton {
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.logoutButton, .sendButton {
   display: flex;
   padding-right: 25px;
 }
-.logoutButton p, .logoutButton a {
+.logoutButton p, .sendButton p, .logoutButton a, .sendButton a {
   color: #FFFFFF;
   border-radius: 5px;
   text-decoration: none;
@@ -101,8 +103,8 @@ a {
   width: 100%;
   background-color: #1C1C1C;
 }
-.logoutButton p:hover, .logoutButton a:hover {
-  color: red;
+.logoutButton p:hover, .sendButton p:hover, .logoutButton a:hover, .sendButton a:hover {
+  color: #ED1C24;
 }
 
 .containerLogin {
@@ -559,6 +561,109 @@ a {
 .endparent .TitleEnd h2 {
   color: #FFFFFF;
   text-align: center;
+}
+
+.colorBG {
+  background: rgb(43, 47, 119);
+  background: linear-gradient(135deg, rgb(43, 47, 119) 0%, rgb(20, 24, 82) 50%, rgb(7, 11, 52) 100%);
+}
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.card, .card_gray, .card_lawngreen, .card_lightblue, .card_jade, .card_orange, .card_rose, .card_emerald, .card_red, .card_yellow, .card_olive, .card_aquamarine, .card_green {
+  justify-content: space-evenly;
+  cursor: pointer;
+  width: 15rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border-radius: 20px;
+  background-color: #21409A;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+.card #cardTitle, .card_gray #cardTitle, .card_lawngreen #cardTitle, .card_lightblue #cardTitle, .card_jade #cardTitle, .card_orange #cardTitle, .card_rose #cardTitle, .card_emerald #cardTitle, .card_red #cardTitle, .card_yellow #cardTitle, .card_olive #cardTitle, .card_aquamarine #cardTitle, .card_green #cardTitle {
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.card #cardSubtitle, .card_gray #cardSubtitle, .card_lawngreen #cardSubtitle, .card_lightblue #cardSubtitle, .card_jade #cardSubtitle, .card_orange #cardSubtitle, .card_rose #cardSubtitle, .card_emerald #cardSubtitle, .card_red #cardSubtitle, .card_yellow #cardSubtitle, .card_olive #cardSubtitle, .card_aquamarine #cardSubtitle, .card_green #cardSubtitle {
+  margin-left: 2px;
+  margin-right: 2px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.card_green {
+  background-color: #C2E0AE;
+  color: #000000;
+}
+.card_aquamarine {
+  background-color: #00AAAD;
+}
+.card_olive {
+  background-color: #006C3B;
+}
+.card_yellow {
+  background-color: #FFF685;
+  color: #000000;
+}
+.card_red {
+  background-color: #ED1C24;
+}
+.card_emerald {
+  background-color: #00B274;
+}
+.card_rose {
+  background-color: #FCD4D1;
+  color: #000000;
+}
+.card_orange {
+  background-color: #D4711A;
+}
+.card_jade {
+  background-color: #72BF44;
+}
+.card_lightblue {
+  justify-content: space-around;
+  background-color: #0066B3;
+}
+.card_lawngreen {
+  background-color: #62A73B;
+}
+.card_gray {
+  background-color: #1C1C1C;
+}
+.card .mt, .card_green .mt, .card_aquamarine .mt, .card_olive .mt, .card_yellow .mt, .card_red .mt, .card_emerald .mt, .card_rose .mt, .card_orange .mt, .card_jade .mt, .card_lightblue .mt, .card_lawngreen .mt, .card_gray .mt {
+  margin-top: 28px;
+}
+.card .mb, .card_green .mb, .card_aquamarine .mb, .card_olive .mb, .card_yellow .mb, .card_red .mb, .card_emerald .mb, .card_rose .mb, .card_orange .mb, .card_jade .mb, .card_lightblue .mb, .card_lawngreen .mb, .card_gray .mb {
+  margin-bottom: 28px;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardBottom .card_gray {
+  height: 117px;
 }
 
 @keyframes gradient {

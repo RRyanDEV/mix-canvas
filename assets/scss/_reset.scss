@@ -11,17 +11,12 @@ body {
   font-family: $font;
   overflow: auto;
 }
-
-main {
+main{
   align-self: center;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: 90vh;
 }
-
 textarea {
   padding: 5px;
   border-radius: 9px;

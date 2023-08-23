@@ -29,11 +29,16 @@
         justify-content: center;
     }
 }
-
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+.sendButton{
+    @extend .logoutButton;
+}
 .logoutButton {
     display: flex;
     padding-right: 25px;
-    
     p,a {
         color: $color-default;
         border-radius: 5px;
@@ -43,7 +48,7 @@
         width: 100%;
         background-color: $card13;
         &:hover{
-            color: red;
+            color: $card6;
         }
     }
 }
