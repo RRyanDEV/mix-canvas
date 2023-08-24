@@ -43,12 +43,15 @@
   }
 
   .btn-register {
-    a, p{
+
+    a,
+    p {
       color: $color-default;
       text-decoration: none;
       width: 100%;
       height: 100%;
     }
+
     @extend .btn-login;
     background-color: $card13;
 
@@ -85,16 +88,31 @@
   }
 }
 
-#ex1 {
-  height: fit-content;
-  width: fit-content;
-  background-color: transparent;
-  box-shadow: none;
+.loginTitle {
+  color: #2f2f2f;
+  font-size: 40px;
+  &_register {
+    @extend .loginTitle;
+    color: $color-default;
+  }
+};
+
+.headerLoginBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
+
+};
+
+;
 
 .register,
 .login {
+  h4 {
+    font-weight: lighter;
+  }
+
   border-radius: 5px;
   box-shadow: $shadow;
   height: auto;

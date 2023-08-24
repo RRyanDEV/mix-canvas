@@ -33,6 +33,14 @@
 
 </a>
 
+### v1.3.3.230824
+
+- Ajustes para onde redirecionava as páginas.
+- Reorganização do código de autenticação.
+- Alteração de tags usadas no código. Modificando para mais atuais.
+
+##
+
 ### v1.3.2.230822
 
 - Modificações na dashboard.

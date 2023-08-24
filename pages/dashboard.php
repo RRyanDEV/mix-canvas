@@ -33,7 +33,7 @@ include("../assets/config/auth_session.php");
                     <img class="userimg" src="../assets/img/user-icon.png">
                 </div>
                 <div id="usertext">
-                    <p>Olá, <?php echo $_SESSION['email']; ?></p>
+                    <p>Olá, <?php echo $_SESSION['username']; ?></p>
                 </div>
             </div>
             <div class="buttons">

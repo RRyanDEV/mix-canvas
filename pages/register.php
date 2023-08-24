@@ -25,40 +25,40 @@
                      VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
         $result   = mysqli_query($conexao, $query);
         if ($result) {
-            header("Location: formulario.php");
+            header("Location: dashboard.php");
         }
     }
     ?>
     <form class="form" action="" method="post">
-        <section class="containerLogin">
+        <div class="containerLogin">
             <div class="register">
-                <i class="fas fa-user-circle"></i>
-                <strong>Criar Conta!</strong>
-                <fieldset>
-                    <div class="form">
-                        <div class="form-row">
-                            <i class="fas fa-user"></i>
-                            <label class="form-label" for="username">Nome</label>
-                            <input type="text" class="form-text" name="username" placeholder="Digite seu Nome" required>
-                        </div>
-                        <div class="form-row">
-                            <i class="fas fa-envelope"></i>
-                            <label class="form-label" for="user_email">E-mail</label>
-                            <input type="text" class="form-text" name="email" placeholder="Digite seu Email" required>
-                        </div>
-                        <div class="form-row">
-                            <i class="fas fa-eye" id="togglePasswordR" style="margin-left: -30px; cursor: pointer;"></i>
-                            <label class="form-label" for="password">Senha</label>
-                            <input type="password" class="form-text" name="password" placeholder="Digite sua Senha" required id="id_passwordR">
-                            <div class="buttons-login">
-                                <div class="form-row button-login">
-                                    <input class="btn btn-login" type="submit" name="submit" value="Criar Conta" class="login-button">
-                                </div>
+                <div class="headerLoginBox">
+                    <div class="fas fa-user-circle"></div>
+                    <b class="loginTitle_register">Criar Conta</b>
+                </div>
+                <div class="form">
+                    <div class="form-row">
+                        <i class="fas fa-user"></i>
+                        <label class="form-label" for="username">Nome</label>
+                        <input type="text" class="form-text" name="username" placeholder="Digite seu Nome" required>
+                    </div>
+                    <div class="form-row">
+                        <i class="fas fa-envelope"></i>
+                        <label class="form-label" for="user_email">E-mail</label>
+                        <input type="text" class="form-text" name="email" placeholder="Digite seu Email" required>
+                    </div>
+                    <div class="form-row">
+                        <i class="fas fa-eye" id="togglePasswordR" style="margin-left: -30px; cursor: pointer;"></i>
+                        <label class="form-label" for="password">Senha</label>
+                        <input type="password" class="form-text" name="password" placeholder="Digite sua Senha" required id="id_passwordR">
+                        <div class="buttons-login">
+                            <div class="form-row button-login">
+                                <input class="btn btn-login" type="submit" name="submit" value="Criar Conta" class="login-button">
                             </div>
                         </div>
-                </fieldset>
+                    </div>
+                </div>
             </div>
-        </section>
     </form>
 </body>
 <script>
