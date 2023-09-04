@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    height: 100%;
+    height: 92%;
     width: 100%;
     flex-direction: row;
     margin-left: auto;
@@ -219,27 +219,11 @@
     margin: auto;
 }
 
-.endparent {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    .TitleEnd {
-        width: 100%;
-
-        h2 {
-            color: $color-default;
-            text-align: center;
-        }
-
-        padding: 70px 0;
-    }
-}
-
 .colorBG {
     background: rgb(43, 47, 119);
     background: linear-gradient(135deg, rgba(43, 47, 119, 1) 0%, rgba(20, 24, 82, 1) 50%, rgba(7, 11, 52, 1) 100%);
 }
+
 
 // Grid Dashboard
 .dashboardContainer {
@@ -270,6 +254,7 @@
     color: $color-default;
     display: flex;
     flex-direction: column;
+
     #cardTitle {
         font-weight: bold;
         font-family: $font;
@@ -277,7 +262,10 @@
         align-items: center;
         text-align: center;
         justify-content: center;
-    };
+    }
+
+    ;
+
     #cardSubtitle {
         margin-left: 2px;
         margin-right: 2px;
@@ -360,10 +348,12 @@
         margin-bottom: 28px;
     }
 }
-.cardBottom{
-    .card_gray{
+
+.cardBottom {
+    .card_gray {
         height: 117px;
     }
+
     display: flex;
     align-items: center;
     justify-content: center;

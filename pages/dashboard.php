@@ -25,6 +25,12 @@ include("../assets/config/auth_session.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </head>
 
+<script>
+    function goToForms() {
+        window.location = "./formulario.php";
+    }
+</script>
+
 <body class="colorBG">
     <nav>
         <div class="navback">
@@ -37,9 +43,6 @@ include("../assets/config/auth_session.php");
                 </div>
             </div>
             <div class="buttons">
-                <div class="sendButton">
-                    <p><a href="">Enviar</a></p>
-                </div>
                 <div class="logoutButton">
                     <p><a href="../assets/config/logout.php">Sair</a></p>
                 </div>
@@ -49,84 +52,84 @@ include("../assets/config/auth_session.php");
     <main>
         <div class="dashboardContainer">
             <div class="parent">
-                <div class="card">
+                <div class="card" onclick="goToForms()">
                     <div id="cardTitle">Recurso Chave</div>
                     <div id="cardSubtitle">
                         São as empresas ou organizações que ajudam a empresa a criar valor para o cliente.
                     </div>
                 </div>
 
-                <div class="card_green">
+                <div class="card_green" onclick="goToForms()">
                     <div id="cardTitle" class="mt">Proposta de Valor</div>
                     <div id="cardSubtitle" class="mb">
                         É o valor que o produto/serviço oferece para o cliente.
                     </div>
                 </div>
 
-                <div class="card_aquamarine">
+                <div class="card_aquamarine" onclick="goToForms()">
                     <div id="cardTitle" class="mt">Segmento de Cliente</div>
                     <div id="cardSubtitle" class="mb">
                         São os grupos de clientes que a empresa pretende atender.
                     </div>
                 </div>
 
-                <div class="card_olive">
+                <div class="card_olive" onclick="goToForms()">
                     <div id="cardTitle">Parceiros Chave</div>
                     <div id="cardSubtitle">
                         São as empresas ou organizações que ajudam a empresa a criar valor para o cliente.
                     </div>
                 </div>
 
-                <div class="card_yellow">
+                <div class="card_yellow" onclick="goToForms()">
                     <div id="cardTitle">Problemas</div>
                     <div id="cardSubtitle">
                         São as necessidades ou desafios enfrentados pelo cliente que a empresa se propõe a solucionar.
                     </div>
                 </div>
 
-                <div class="card_red">
+                <div class="card_red" onclick="goToForms()">
                     <div id="cardTitle">Solução</div>
                     <div id="cardSubtitle">
                         É o produto/serviço oferecido pela empresa para resolver os problemas do cliente.
                     </div>
                 </div>
 
-                <div class="card_emerald">
+                <div class="card_emerald" onclick="goToForms()">
                     <div id="cardTitle" class="mt">Relacionamento com cliente</div>
                     <div id="cardSubtitle" class="mb">
                         É a forma como a empresa se relaciona com o cliente.
                     </div>
                 </div>
 
-                <div class="card_rose">
+                <div class="card_rose" onclick="goToForms()">
                     <div id="cardTitle" class="mt">Atividades Chaves</div>
                     <div id="cardSubtitle" class="mb">
                         São as atividades essenciais para a operação do negócio.
                     </div>
                 </div>
 
-                <div class="card_orange">
+                <div class="card_orange" onclick="goToForms()">
                     <div id="cardTitle">Métricas Chave</div>
                     <div id="cardSubtitle">
                         São as métricas utilizadas para mensurar o desempenho do negócio.
                     </div>
                 </div>
 
-                <div class="card_jade">
+                <div class="card_jade" onclick="goToForms()">
                     <div id="cardTitle">Canais de distribuição</div>
                     <div id="cardSubtitle">
                         São os canais pelos quais a empresa se comunica e entrega seu produto/serviço ao cliente.
                     </div>
                 </div>
 
-                <div class="card_lightblue">
+                <div class="card_lightblue" onclick="goToForms()">
                     <div id="cardTitle" class="mt">Estrutura de custo</div>
                     <div id="cardSubtitle" class="mb">
                         São os custos envolvidos na operação do negócio.
                     </div>
                 </div>
 
-                <div class="card_lawngreen">
+                <div class="card_lawngreen" onclick="goToForms()">
                     <div id="cardTitle" class="mt">Vantagem competitiva</div>
                     <div id="cardSubtitle" class="mb">
                         É o que diferencia o negócio dos seus concorrentes.
@@ -134,7 +137,7 @@ include("../assets/config/auth_session.php");
                 </div>
 
             </div> <!--- Div Grid --->
-            <div class="cardBottom">
+            <div class="cardBottom" onclick="goToForms()">
                 <div class="card_gray">
                     <div id="cardTitle" class="mt">Fonte de receita</div>
                     <div id="cardSubtitle" class="mb">

@@ -45,46 +45,16 @@ a {
   text-decoration: none;
 }
 
-.navback {
-  justify-content: flex-start;
-  justify-content: space-between;
-  display: flex;
-  background-image: linear-gradient(148deg, rgb(147, 161, 231) 0%, rgb(50, 100, 147) 50%, rgb(186, 186, 186) 100%);
-  width: 100%;
-  height: 100%;
-  border-bottom: 20px;
-  align-items: center;
-}
-
-.userinfo {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-
-#usertext {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#usericon img {
-  width: 50px;
-  height: 50px;
-  padding: 3px;
-  justify-content: center;
-}
-
-.buttons {
+.buttons, .returnButton {
   display: flex;
   flex-direction: row;
 }
 
-.logoutButton, .sendButton {
+.logoutButton {
   display: flex;
   padding-right: 25px;
 }
-.logoutButton p, .sendButton p, .logoutButton a, .sendButton a {
+.logoutButton p, .logoutButton a {
   color: #FFFFFF;
   border-radius: 5px;
   text-decoration: none;
@@ -93,22 +63,16 @@ a {
   width: 100%;
   background-color: #1C1C1C;
 }
-.logoutButton p:hover, .sendButton p:hover, .logoutButton a:hover, .sendButton a:hover {
+.logoutButton p:hover, .logoutButton a:hover {
   color: #ED1C24;
 }
 
-.containerLogin {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 50px auto;
-  max-width: 1200px;
-  width: 100%;
+.returnButton {
+  margin-left: 3px;
+  padding: 9px;
 }
-@media (max-width: 768px) {
-  .containerLogin {
-    flex-wrap: wrap;
-  }
+.returnButton p:hover, .returnButton a:hover {
+  color: #00B274;
 }
 
 .buttons-login {
@@ -173,6 +137,50 @@ a {
   font-size: 12px;
   line-height: 12px;
   margin: 0 0 0 10px;
+}
+
+.navback {
+  justify-content: flex-start;
+  justify-content: space-between;
+  display: flex;
+  background-image: linear-gradient(148deg, rgb(147, 161, 231) 0%, rgb(50, 100, 147) 50%, rgb(186, 186, 186) 100%);
+  width: 100%;
+  height: 100%;
+  border-bottom: 20px;
+  align-items: center;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+#usertext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#usericon img {
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  justify-content: center;
+}
+
+.containerLogin {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1200px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .containerLogin {
+    flex-wrap: wrap;
+  }
 }
 
 .loginTitle, .loginTitle_register {
@@ -364,7 +372,7 @@ a {
   align-items: center;
   justify-content: center;
   display: flex;
-  height: 100%;
+  height: 92%;
   width: 100%;
   flex-direction: row;
   margin-left: auto;
@@ -547,20 +555,6 @@ a {
   width: 80%;
   height: 50%;
   margin: auto;
-}
-
-.endparent {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.endparent .TitleEnd {
-  width: 100%;
-  padding: 70px 0;
-}
-.endparent .TitleEnd h2 {
-  color: #FFFFFF;
-  text-align: center;
 }
 
 .colorBG {
@@ -819,21 +813,4 @@ a {
   border: none;
   outline: none;
   font-size: 15px;
-}
-
-.btn-form {
-  background-color: transparent;
-  align-items: center;
-  border: rgba(0, 0, 0, 0.6) solid;
-  padding: 10px;
-  width: 30%;
-  border-radius: 10px;
-  color: #FFFFFF;
-  font-size: 15px;
-}
-
-.btn:hover {
-  transition: 0.4s;
-  background-color: deepskyblue;
-  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

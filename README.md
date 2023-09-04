@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.3.2-230822?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.4.3-230904?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,15 @@
 ## Notas de versão
 
 </a>
+
+### v1.4.3.230904
+
+- Reorganização do direcionamento das páginas.
+- Novas funções adicionadas aos cartões.
+- Mudanças nas questões do formulário.
+- Novo arquivo SASS, onde contêm a estilização dos botões.
+
+##
 
 ### v1.3.3.230824
 

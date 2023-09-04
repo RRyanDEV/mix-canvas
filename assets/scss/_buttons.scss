@@ -1,0 +1,108 @@
+// Navbar Buttons
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+.logoutButton {
+    display: flex;
+    padding-right: 25px;
+    p,a {
+        color: $color-default;
+        border-radius: 5px;
+        text-decoration: none;
+        padding: 7px;
+        text-align: center;
+        width: 100%;
+        background-color: $card13;
+        &:hover{
+            color: $card6;
+        }
+    }
+}
+
+.returnButton{
+    margin-left: 3px;
+    @extend .buttons;
+    padding: 9px;
+    p,a{
+        &:hover{
+            color: $card7;
+        }
+    }
+}
+
+//Botões Login/Criar Conta (Sessão: Bem Vindo)
+.buttons-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .btn-login {
+        align-items: center;
+        background: $card11;
+        border-radius: 3px;
+        border: 0;
+        color: $color-default;
+        cursor: pointer;
+        display: flex;
+        font-size: 16px;
+        padding: 15px 45px;
+        transition: .2s;
+
+        &:hover {
+            background: #2036de;
+            transform: translateY(-2px);
+        }
+
+        .fas.fa-arrow-right {
+            color: $color-default;
+            font-size: 12px;
+            line-height: 12px;
+            margin: 0 0 0 10px;
+        }
+    }
+
+    .btn-register {
+        a,
+        p {
+            color: $color-default;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        @extend .btn-login;
+        background-color: $card13;
+
+        &:hover {
+            background: #555;
+        }
+    }
+}
+
+.modal {
+    .btn-login {
+        align-items: center;
+        background: $card11;
+        border-radius: 3px;
+        border: 0;
+        color: $color-default;
+        cursor: pointer;
+        display: flex;
+        font-size: 16px;
+        padding: 15px 45px;
+        transition: .2s;
+
+        &:hover {
+            background: #2036de;
+            transform: translateY(-2px);
+        }
+
+        .fas.fa-arrow-right {
+            color: $color-default;
+            font-size: 12px;
+            line-height: 12px;
+            margin: 0 0 0 10px;
+        }
+    }
+}

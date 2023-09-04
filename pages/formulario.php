@@ -5,58 +5,59 @@ session_start();
 // Array, onde fica as informações de cada formulário.
 $componentArray = [
     '0' => [
-        'name' => 'recursochave', 'color' =>  'blue', 'title' => 'Recurso Chave', 'subtitle1' => 'São os ativos necessários para a operação do negócio.', 'subtitle2' =>  'Exemplo: equipamentos, tecnologia, pessoas, capital, etc.', 'btnPrevious' => ''
+        'name' => 'recursochave', 'color' =>  'blue', 'title' => 'Recurso Chave', 'subtitle1' => 'São os ativos necessários para a operação do negócio.', 'subtitle2' =>  'Exemplo: equipamentos, tecnologia, pessoas, capital, etc.', 'btnPrevious' => '', 'btnReturn' => 'returnButton'
     ],
     '1' => [
-        'name' => 'propostavalor', 'color' =>  'green', 'title' => 'Proposta de Valor', 'subtitle1' => 'É o valor que o produto/serviço oferece para o cliente.', 'subtitle2' =>  'Exemplo: inovação, qualidade, conveniência, etc.', 'btnPrevious' => 'arrow_left'
+        'name' => 'propostavalor', 'color' =>  'green', 'title' => 'Proposta de Valor', 'subtitle1' => 'É o valor que o produto/serviço oferece para o cliente.', 'subtitle2' =>  'Exemplo: inovação, qualidade, conveniência, etc.', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '2' => [
-        'name' => 'segmentocliente', 'color' =>  'aquamarine', 'title' => 'Segmento de clientes', 'subtitle1' => 'São os grupos de clientes que a empresa pretende atender.', 'subtitle2' =>  'Exemplo: jovens, idosos, empresas, etc.', 'btnPrevious' => 'arrow_left'
+        'name' => 'segmentocliente', 'color' =>  'aquamarine', 'title' => 'Segmento de clientes', 'subtitle1' => 'São os grupos de clientes que a empresa pretende atender.', 'subtitle2' =>  'Exemplo: jovens, idosos, empresas, etc.', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '3' => [
-        'name' => 'parceiroschave', 'color' =>  'olive', 'title' => 'Parceiros chave', 'subtitle1' => 'São as empresas ou organizações que ajudam a empresa a criar valor para o cliente.', 'subtitle2' =>  'Exemplo: fornecedores, distribuidores, parceiros de marketing, etc.', 'btnPrevious' => 'arrow_left'
+        'name' => 'parceiroschave', 'color' =>  'olive', 'title' => 'Parceiros chave', 'subtitle1' => 'São as empresas ou organizações que ajudam a empresa a criar valor para o cliente.', 'subtitle2' =>  'Exemplo: fornecedores, distribuidores, parceiros de marketing, etc.', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '4' => [
         'name' => 'problemas', 'color' =>  'yellow', 'title' => 'Problemas', 'subtitle1' => 'São as necessidades ou desafios enfrentados pelo cliente que a empresa se propõe a solucionar.', 'subtitle2' =>  'Exemplo: falta de tempo, falta de acesso a produtos/serviços, dificuldades financeiras, etc.
-', 'btnPrevious' => 'arrow_left'
+', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '5' => [
         'name' => 'solucao', 'color' =>  'red', 'title' => 'Solução', 'subtitle1' => 'É o produto/serviço oferecido pela empresa para resolver os problemas do cliente.', 'subtitle2' =>  'Exemplo: aplicativo de delivery de comida, serviço de consultoria financeira, produto inovador, etc.
-',  'btnPrevious' => 'arrow_left'
+',  'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '6' => [
         'name' => 'relacaocliente', 'color' =>  'emerald', 'title' => 'Relacionamento com cliente', 'subtitle1' => ' É a forma como a empresa se relaciona com o cliente.', 'subtitle2' =>  'Exemplo: atendimento personalizado, suporte técnico, comunicação eficiente, etc.
-', 'btnPrevious' => 'arrow_left'
+', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '7' => [
         'name' => 'atividadeschave', 'color' =>  'rose', 'title' => 'Atividades Chaves', 'subtitle1' => 'São as atividades essenciais para a operação do negócio.', 'subtitle2' =>  'Exemplo: produção, marketing, vendas, atendimento, etc.
-', 'btnPrevious' => 'arrow_left'
+', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '8' => [
         'name' => 'metricas', 'color' =>  'orange', 'title' => 'Métricas chave', 'subtitle1' => 'São as métricas utilizadas para mensurar o desempenho do negócio.', 'subtitle2' =>  'Exemplo: número de clientes, faturamento, custos, taxa de conversão, etc.
-',  'btnPrevious' => 'arrow_left'
+',  'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '9' => [
         'name' => 'canaisdistribuicao', 'color' =>  'jade', 'title' => 'Canais de distribuição', 'subtitle1' => 'São os canais pelos quais a empresa se comunica e entrega seu produto/serviço ao cliente.', 'subtitle2' =>  'Exemplo: loja física, e-commerce, aplicativo, redes sociais, etc.
-',  'btnPrevious' => 'arrow_left'
+',  'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '10' => [
         'name' => 'estruturacusto', 'color' =>  'lightblue', 'title' => 'Estrutura de custo', 'subtitle1' => 'São os custos envolvidos na operação do negócio.', 'subtitle2' =>  'Exemplo: custo de produção, marketing, logística, pessoal, etc.
-',  'btnPrevious' => 'arrow_left'
+',  'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '11' => [
-        'name' => 'vantagemcompetitiva', 'color' =>  'lawngreen', 'title' => 'Vantagem competitiva', 'subtitle1' => 'É o que diferencia o negócio dos seus concorrentes.', 'subtitle2' =>  'Exemplo: preço, qualidade, inovação, atendimento, etc.', 'btnPrevious' => 'arrow_left'
+        'name' => 'vantagemcompetitiva', 'color' =>  'lawngreen', 'title' => 'Vantagem competitiva', 'subtitle1' => 'É o que diferencia o negócio dos seus concorrentes.', 'subtitle2' =>  'Exemplo: preço, qualidade, inovação, atendimento, etc.', 'btnPrevious' => 'arrow_left', 'btnReturn' => ''
     ],
     '12' => ['name' => 'fontereceita', 'color' =>  'gray', 'title' => 'Fonte de receita', 'subtitle1' => 'É como a empresa ganha dinheiro.', 'subtitle2' =>  'Exemplo: venda de produtos/serviços, aluguel de espaço, publicidade,comissões,etc.
-', 'btnPrevious' => 'arrow_left']
+', 'btnPrevious' => 'arrow_left', 'btnReturn' => '']
 ];
 global $componentArray;
 //
 
 // Função que cria o formulário.
-function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevious)
+function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevious, $btnReturn)
 {
     $displayBtnPrevious = ($btnPrevious == "") ? ('style="display:none"') : ('');
+    $displayBtnReturn = ($btnReturn == "") ? ('style="display:none"') : ('');
     return '<form action="" class="form" method="POST">
 <div class="container_g">
     <div class="' . $btnPrevious . '">
@@ -87,7 +88,12 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
     <div class="arrow">
         <input type="submit" name="submit" value="">
     </div>
-</div>
+    </div>
+    <div class="' . $btnReturn . '">
+                <div class="logoutButton" ' . $displayBtnReturn . '>
+                    <p><a href="./dashboard.php">Voltar</a></p>
+                </div>
+            </div>
 </form>';
 }
 //
@@ -96,9 +102,13 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
 function createComponent($arrayIndex)
 {
     if ((int)$arrayIndex == 13) {
-        return '<div class="endparent">
-        <div class="TitleEnd">
-                <h2>Formulário enviado com sucesso!</h2><div></div>';
+        return '<div class="containerLogin">
+        <div class="login">
+            <h1>Formulário enviado com sucesso!</h1>
+            <br>
+            <p class="link">Clique aqui para <a href="dashboard.php">Voltar</a> a página principal.</p>
+        </div>
+    </div>';
     } else {
         $componentProps = array_values($GLOBALS['componentArray'][$arrayIndex]);
         return formComponent(...$componentProps);
@@ -152,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$doc->loadHTML('<?xml encoding="utf-8" ?>' . createComponent($_SESSION['step']));
+$doc->loadHTML('<?xml encoding="utf-8" ?>' . '<link rel="icon" href="../assets/img/site-logo.png" />' . createComponent($_SESSION['step']));
 
 $element = $doc->getElementById("txt");
 if ($element !== null) {
@@ -196,6 +206,9 @@ function finishForm()
 </head>
 
 <body>
+    <?php
+
+    ?>
     <script type="text/javascript">
         jQuery(document).on('keyup', 'textarea', updateCount);
         jQuery(document).on('keydown', 'textarea', updateCount);
