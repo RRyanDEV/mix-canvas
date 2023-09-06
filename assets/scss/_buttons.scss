@@ -21,12 +21,31 @@
 }
 
 .returnButton{
-    margin-left: 3px;
     @extend .buttons;
-    padding: 9px;
-    p,a{
+    display: flex;
+    margin: auto;
+    margin-bottom: 40px;
+    width: 80%;
+}
+.buttonsFormsExit{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    a{
+        color: $dark;
+        font-weight: bold;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        border-radius: 5px;
+        text-decoration: none;
+        padding: 7px;
+        text-align: center;
+        background-color: $color-default;
         &:hover{
-            color: $card7;
+            color: $color-default;
+            background-color: $color-card;
+            transition: 250ms linear;
         }
     }
 }

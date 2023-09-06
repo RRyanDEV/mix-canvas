@@ -68,11 +68,33 @@ a {
 }
 
 .returnButton {
-  margin-left: 3px;
-  padding: 9px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+  width: 80%;
 }
-.returnButton p:hover, .returnButton a:hover {
-  color: #00B274;
+
+.buttonsFormsExit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.buttonsFormsExit a {
+  color: #000000;
+  font-weight: bold;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 7px;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+.buttonsFormsExit a:hover {
+  color: #FFFFFF;
+  background-color: #21409A;
+  transition: 250ms linear;
 }
 
 .buttons-login {
@@ -201,7 +223,7 @@ a {
 .register,
 .login {
   border-radius: 5px;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  box-shadow: 0 7px -5px 0px rgba(150, 170, 180, 0.5);
   height: auto;
   max-width: 400px;
   padding: 40px 15px;
@@ -555,6 +577,7 @@ a {
   width: 80%;
   height: 50%;
   margin: auto;
+  margin-bottom: 0px;
 }
 
 .colorBG {

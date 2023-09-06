@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.4.3-230904?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.4.4-230906?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,13 @@
 ## Notas de versão
 
 </a>
+
+### v1.4.4.230906
+
+- Mudanças no layout dos formulários.
+- Update nos botões de avançar e retroceder.
+
+##
 
 ### v1.4.3.230904
 
