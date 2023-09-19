@@ -25,11 +25,7 @@ include("../assets/config/auth_session.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </head>
 
-<script>
-    function goToForms() {
-        window.location = "./formulario.php";
-    }
-</script>
+
 
 <body class="colorBG">
     <nav>
@@ -153,5 +149,10 @@ include("../assets/config/auth_session.php");
         <div class="wave"></div>
     </div>
 </body>
+<script>
+    function goToForms(step) {
+        window.location = "./formulario.php";
+    }
+</script>
 
 </html>

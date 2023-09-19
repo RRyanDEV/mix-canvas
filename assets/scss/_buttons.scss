@@ -24,6 +24,7 @@
     @extend .buttons;
     display: flex;
     margin: auto;
+    margin-top: 40px;
     margin-bottom: 40px;
     width: 80%;
 }
@@ -32,8 +33,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 10px;
-    a{
+    .buttonForm,a{
+        border: none;
         color: $dark;
         font-weight: bold;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;

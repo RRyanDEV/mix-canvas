@@ -84,14 +84,12 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
                 </div>
                 <div class="' . $btnReturn . '">
                 <div class="buttonsFormsExit" ' . $displayBtnReturn . '>
-                    <p><a href="./dashboard.php">Salvar e sair</a></p>
+                <p><a href="./dashboard.php">Exit</a></p>
+                <button class="buttonForm" type="submit" name="submit">Salvar e sair</button>
                 </div>
             </div>
             </div>
         </div>
-    </div>
-    <div class="arrow">
-        <input type="submit" name="submit" value="">
     </div>
     </div>
 </form>';
