@@ -1,6 +1,6 @@
 <?php
 
-$dbHost = 'localhost';
+$dbHost = 'localhost:3306';
 $dbUsername = 'root';
 $dbPassword = '2530';
 $dbName = 'mix_canvas';
@@ -18,4 +18,3 @@ global $returnToPage;
 // } else {
 //     echo 'Conexão efetuada com Sucesso';
 // }
-?>
