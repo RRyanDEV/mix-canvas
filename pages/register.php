@@ -23,10 +23,10 @@
         $password = mysqli_real_escape_string($conexao, $password);
         $create_datetime = date("Y-m-d H:i:s");
         $query    = "INSERT into `users` (username, password, email, create_datetime)
-                     VALUES ('$username', '" . ($password) . "', '$email', '$create_datetime')";
+                     VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
         $result   = mysqli_query($conexao, $query);
         if ($result) {
-            header("Location: dashboard.php");
+            header("Location: login.php");
         }
     }
     ?>

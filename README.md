@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.5.5-230925?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.5.6-230928?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,12 @@
 ## Notas de versão
 
 </a>
+
+### v1.5.6.230928
+
+- Modificado o modo de segurança da senha e verificação de credencial.
+
+##
 
 ### v1.5.5.230925
 
