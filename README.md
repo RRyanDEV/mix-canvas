@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.5.6-230928?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.5.7-231002?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v1.5.7.231002
+
+- Função para acompanhar o passo do formulário de acordo com o click no card desejado.
+- Correção no `id do usuário` que não estava sendo enviado para o banco, junto as respostas.
+- Verificação de email ja cadastrado, adicionado.
+
+##
 
 ### v1.5.6.230928
 

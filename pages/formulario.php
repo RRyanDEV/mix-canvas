@@ -60,10 +60,6 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
     $displayBtnReturn = ($btnReturn == "") ? ('style="display:none"') : ('');
     return '<form action="" class="form" method="POST">
 <div class="container_g">
-    <div class="' . $btnPrevious . '">
-    <input type="text" name="backToStep" value="' . $_SESSION['step'] . '" ' . ' style="display:none">
-    <input type="submit" name="back" value="" ' . $displayBtnPrevious . '>
-    </div>
     <div class="container_mdf">
         <div class="cont-model">
             <div class="card_side_left_' . $color . '">
@@ -84,8 +80,7 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
                 </div>
                 <div class="' . $btnReturn . '">
                 <div class="buttonsFormsExit" ' . $displayBtnReturn . '>
-                <p><a href="./dashboard.php">Exit</a></p>
-                <button class="buttonForm" type="submit" name="submit">Salvar e sair</button>
+                <button class="buttonForm" id="back" type="submit" name="submit">Salvar e sair</button>
                 </div>
             </div>
             </div>
@@ -124,6 +119,12 @@ if (!isset($_SESSION['step'])) {
     $_SESSION['step'] = 0;
 }
 
+$_SESSION['step'] = $_GET['step'];
+
+if (!isset($_GET['step'])) {
+    $_SESSION['step'] = 0;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($GLOBALS['componentArray'] as $item) {
         if (isset($_POST[$item['name']])) {
@@ -134,31 +135,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-
-
-    if ($_SESSION['step'] == 12 && strlen($_SESSION['fontereceita']) > 0) {
-        finishForm();
-    }
-
+}
 
     if (isset($_POST['submit'])) {
-        $_SESSION['step']++;
-        if ($_SESSION['step'] != 13) {
-            $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
-            $_SESSION['textValue'] = $_SESSION[$postEntry];
+        $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
+        $_SESSION['textValue'] = $_SESSION[$postEntry];
+        $userid = $_SESSION['userID'];
+        foreach ($GLOBALS['componentArray'] as $item) {
+            $pergunta = $item['title'];
+            $resposta = $_SESSION[$item['name']];
+            mysqli_query(
+                $GLOBALS['conexao'],
+                "INSERT INTO blocos(id_user,pergunta,resposta) 
+                VALUES ($userid , '$pergunta', '$resposta')"
+            );
         }
+        header("Location: ./dashboard.php");
     }
-    if (isset($_POST['back'])) {
-        if ((isset($_POST['backToStep'])) && (int)$_POST['backToStep'] > 1) {
-            $_SESSION['backToStep'] = (int)$_POST['backToStep'] - 1;
-        } else {
-            $_SESSION['backToStep'] = 0;
-        }
-        $_SESSION['step'] = $_SESSION['backToStep'];
-        $backEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
-        $_SESSION['textValue'] = $_SESSION[$backEntry];
-    }
-}
+
 
 $doc->loadHTML('<?xml encoding="utf-8" ?>' . '<link rel="icon" href="../assets/img/site-logo.png" />' . createComponent($_SESSION['step']));
 
@@ -169,22 +163,6 @@ if ($element !== null) {
 
 echo $doc->saveHTML();
 
-
-function finishForm()
-{
-    // Condição que envia os valores para o banco de dados.
-    $userid = $GLOBALS['conexao']->insert_id;
-    foreach ($GLOBALS['componentArray'] as $item) {
-        $pergunta = $item['title'];
-        $resposta = $_SESSION[$item['name']];
-        mysqli_query(
-            $GLOBALS['conexao'],
-            "INSERT INTO blocos(id_user,pergunta,resposta) 
-            VALUES ($userid , '$pergunta', '$resposta')"
-        );
-    }
-    mysqli_close($GLOBALS['conexao']);
-}
 ?>
 
 
@@ -208,6 +186,10 @@ function finishForm()
 
     ?>
     <script type="text/javascript">
+        function goToDash(){
+            window.location = "./dashboard.php"
+        }
+
         jQuery(document).on('keyup', 'textarea', updateCount);
         jQuery(document).on('keydown', 'textarea', updateCount);
 

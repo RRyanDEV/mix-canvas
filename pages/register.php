@@ -11,6 +11,8 @@
     <title>Registrar</title>
 </head>
 
+
+
 <body>
     <?php
     require('../assets/config/config.php');
@@ -26,7 +28,9 @@
                      VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
         $result   = mysqli_query($conexao, $query);
         if ($result) {
-            header("Location: login.php");
+            header("Location: success.php");
+        } else{
+            header("Location: failure.php");
         }
     }
     ?>

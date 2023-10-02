@@ -9,7 +9,6 @@ if (isset($_POST['email'])) {
     $resultHashed = checkCredentials(true, $email, $password, $conexao);
     if ($result) {
         $_SESSION['username'] = $result;
-        // Redirect to user dashboard page
         header("Location: dashboard.php");
     } else if($resultHashed) {
         $_SESSION['username'] = $resultHashed;
@@ -25,8 +24,10 @@ function checkCredentials($hashed, $email, $password, $conexao)
     $query    = "SELECT * FROM `users` WHERE email='$email' AND password='" . ($verifiedPassword) . "'";
     $result = mysqli_query($conexao, $query);
     $rows = mysqli_num_rows($result);
+    $fetch = mysqli_fetch_array($result);
     if($rows == 1){
-        return mysqli_fetch_array($result)[1];
+        $_SESSION['userID'] = ($fetch)[0];
+        return $fetch[1];
     } else{
         return false;
     }
