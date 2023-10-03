@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.5.7-231002?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-1.5.8-231003?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v1.5.8.231003
+
+- Feito um novo método para armazenar as informações preenchidas.
+- Tentativa de implementar, atualização das informações já preenchidas sem que gere uma cópia das informações que não foram editadas.
+- Feito uma função que puxa os valores do banco de dados.
+
+##
 
 ### v1.5.7.231002
 

@@ -9,12 +9,12 @@ if (isset($_POST['email'])) {
     $resultHashed = checkCredentials(true, $email, $password, $conexao);
     if ($result) {
         $_SESSION['username'] = $result;
-        header("Location: dashboard.php");
+        // header("Location: dashboard.php");
     } else if($resultHashed) {
         $_SESSION['username'] = $resultHashed;
-        header("Location: dashboard.php");
+        // header("Location: dashboard.php");
     } else{
-        header("Location: error.php");
+        // header("Location: error.php");
     }
 };
 
@@ -27,8 +27,20 @@ function checkCredentials($hashed, $email, $password, $conexao)
     $fetch = mysqli_fetch_array($result);
     if($rows == 1){
         $_SESSION['userID'] = ($fetch)[0];
+        getUserData($_SESSION['userID'], $conexao);
         return $fetch[1];
     } else{
         return false;
     }
+}
+
+function getUserData($userID, $conexao){
+    $query = "SELECT * FROM `blocos` WHERE id_user ='$userID'";
+    $result = mysqli_query($conexao, $query);
+    $fetch = mysqli_fetch_all($result, MYSQLI_NUM);
+    foreach($fetch as $row){
+        $_SESSION[$row[2]] = $row[3];
+    }
+    // print_r($_SESSION);
+    // echo $_SESSION['Recurso Chave'];
 }

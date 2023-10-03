@@ -80,7 +80,7 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
                 </div>
                 <div class="' . $btnReturn . '">
                 <div class="buttonsFormsExit" ' . $displayBtnReturn . '>
-                <button class="buttonForm" id="back" type="submit" name="submit">Salvar e sair</button>
+                <button class="buttonForm" type="submit" name="submit">Salvar e sair</button>
                 </div>
             </div>
             </div>
@@ -125,33 +125,61 @@ if (!isset($_GET['step'])) {
     $_SESSION['step'] = 0;
 }
 
+if (!isset($_SESSION[$componentArray[$_SESSION['step']]['title']])) {
+    $_SESSION[$componentArray[$_SESSION['step']]['title']] = "";
+}
+
+$_SESSION['textValue'] = $_SESSION[$componentArray[$_SESSION['step']]['title']];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($GLOBALS['componentArray'] as $item) {
         if (isset($_POST[$item['name']])) {
-            $_SESSION[$item['name']] = (string)$_POST[$item['name']];
+            $_SESSION['form_' . $item['name']] = (string)$_POST[$item['name']];
         } else {
-            if (empty($_SESSION[$item['name']]) && !isset($_SESSION[$item['name']])) {
-                $_SESSION[$item['name']] = "";
+            if (empty($_SESSION['form_' . $item['name']]) && !isset($_SESSION['form_' . $item['name']])) {
+                $_SESSION['form_' . $item['name']] = "";
             }
         }
     }
 }
 
-    if (isset($_POST['submit'])) {
-        $postEntry = $GLOBALS['componentArray'][$_SESSION['step']]['name'];
-        $_SESSION['textValue'] = $_SESSION[$postEntry];
-        $userid = $_SESSION['userID'];
-        foreach ($GLOBALS['componentArray'] as $item) {
-            $pergunta = $item['title'];
-            $resposta = $_SESSION[$item['name']];
-            mysqli_query(
-                $GLOBALS['conexao'],
-                "INSERT INTO blocos(id_user,pergunta,resposta) 
-                VALUES ($userid , '$pergunta', '$resposta')"
-            );
-        }
-        header("Location: ./dashboard.php");
+if (isset($_POST['submit'])) {
+    $userid = $_SESSION['userID'];
+    $step = $_SESSION['step'];
+    $pergunta = $GLOBALS['componentArray'][$step]['title'];
+    $respostaForm =  $_SESSION['form_' . $GLOBALS['componentArray'][$step]['name']];
+    if (strlen($_SESSION[$pergunta]) > 0) {
+        mysqli_query(
+            $GLOBALS['conexao'],
+            "UPDATE blocos SET pergunta='$_SESSION[$pergunta]' , resposta='$respostaForm' WHERE id_user='$userid'"
+        );
+    } else {
+        mysqli_query(
+            $GLOBALS['conexao'],
+            "INSERT INTO blocos(id_user,pergunta,resposta) 
+                VALUES ($userid , '$pergunta', '$respostaForm')"
+        );
     }
+    header("Location: ./dashboard.php");
+}
+
+
+/*
+if (isset($_POST['submit'])) {
+    $userid = $_SESSION['userID'];
+    foreach ($GLOBALS['componentArray'] as $item) {
+        $pergunta = $item['title'];
+        $resposta = $_SESSION[$item['name']];
+        mysqli_query(
+            $GLOBALS['conexao'],
+            "INSERT INTO blocos(id_user,pergunta,resposta) 
+                VALUES ($userid , '$pergunta', '$resposta')"
+        );
+    }
+    header("Location: ./dashboard.php");
+}
+*/
+
 
 
 $doc->loadHTML('<?xml encoding="utf-8" ?>' . '<link rel="icon" href="../assets/img/site-logo.png" />' . createComponent($_SESSION['step']));
@@ -186,7 +214,7 @@ echo $doc->saveHTML();
 
     ?>
     <script type="text/javascript">
-        function goToDash(){
+        function goToDash() {
             window.location = "./dashboard.php"
         }
 
