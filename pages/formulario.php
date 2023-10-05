@@ -94,18 +94,8 @@ function formComponent($name, $color, $title, $subtitle1, $subtitle2, $btnPrevio
 // Função que percorre o array, para informar em qual estágio do formulário está.
 function createComponent($arrayIndex)
 {
-    if ((int)$arrayIndex == 13) {
-        return '<div class="containerLogin">
-        <div class="login">
-            <h1>Formulário enviado com sucesso!</h1>
-            <br>
-            <p class="link">Clique aqui para <a href="dashboard.php">Voltar</a> a página principal.</p>
-        </div>
-    </div>';
-    } else {
-        $componentProps = array_values($GLOBALS['componentArray'][$arrayIndex]);
-        return formComponent(...$componentProps);
-    }
+    $componentProps = array_values($GLOBALS['componentArray'][$arrayIndex]);
+    return formComponent(...$componentProps);
 }
 //
 
@@ -131,27 +121,15 @@ if (!isset($_SESSION[$componentArray[$_SESSION['step']]['title']])) {
 
 $_SESSION['textValue'] = $_SESSION[$componentArray[$_SESSION['step']]['title']];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    foreach ($GLOBALS['componentArray'] as $item) {
-        if (isset($_POST[$item['name']])) {
-            $_SESSION['form_' . $item['name']] = (string)$_POST[$item['name']];
-        } else {
-            if (empty($_SESSION['form_' . $item['name']]) && !isset($_SESSION['form_' . $item['name']])) {
-                $_SESSION['form_' . $item['name']] = "";
-            }
-        }
-    }
-}
-
 if (isset($_POST['submit'])) {
     $userid = $_SESSION['userID'];
     $step = $_SESSION['step'];
-    $pergunta = $GLOBALS['componentArray'][$step]['title'];
-    $respostaForm =  $_SESSION['form_' . $GLOBALS['componentArray'][$step]['name']];
+    $pergunta = $GLOBALS['componentArray'][(int)$step]['title'];
+    $respostaForm =  $_POST[$GLOBALS['componentArray'][(int)$step]['name']];
     if (strlen($_SESSION[$pergunta]) > 0) {
         mysqli_query(
             $GLOBALS['conexao'],
-            "UPDATE blocos SET pergunta='$_SESSION[$pergunta]' , resposta='$respostaForm' WHERE id_user='$userid'"
+            "UPDATE blocos SET resposta='$respostaForm' WHERE id_user='$userid' and pergunta='$pergunta'  "
         );
     } else {
         mysqli_query(
@@ -163,25 +141,6 @@ if (isset($_POST['submit'])) {
     header("Location: ./dashboard.php");
 }
 
-
-/*
-if (isset($_POST['submit'])) {
-    $userid = $_SESSION['userID'];
-    foreach ($GLOBALS['componentArray'] as $item) {
-        $pergunta = $item['title'];
-        $resposta = $_SESSION[$item['name']];
-        mysqli_query(
-            $GLOBALS['conexao'],
-            "INSERT INTO blocos(id_user,pergunta,resposta) 
-                VALUES ($userid , '$pergunta', '$resposta')"
-        );
-    }
-    header("Location: ./dashboard.php");
-}
-*/
-
-
-
 $doc->loadHTML('<?xml encoding="utf-8" ?>' . '<link rel="icon" href="../assets/img/site-logo.png" />' . createComponent($_SESSION['step']));
 
 $element = $doc->getElementById("txt");
@@ -192,8 +151,6 @@ if ($element !== null) {
 echo $doc->saveHTML();
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">

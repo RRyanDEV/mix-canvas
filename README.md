@@ -19,7 +19,7 @@
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&logo=MySQL&logoColor=white">
 </a>
 
-<a href=""><img src="https://img.shields.io/badge/version-1.5.8-231003?" height="22" alt="Version"/></a>
+<a href=""><img src="https://img.shields.io/badge/version-2.0.0-231005?" height="22" alt="Version"/></a>
 
 <br>
 
@@ -32,6 +32,14 @@
 ## Notas de versão
 
 </a>
+
+### v2.0.0.231003
+
+- Removido arquivos e funções que não eram utilizadas.
+- Novo método de envio e recebimento de informações do Banco de Dados.
+- Versão final do projeto.
+
+##
 
 ### v1.5.8.231003
 

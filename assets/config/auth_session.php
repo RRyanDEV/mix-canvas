@@ -9,12 +9,12 @@ if (isset($_POST['email'])) {
     $resultHashed = checkCredentials(true, $email, $password, $conexao);
     if ($result) {
         $_SESSION['username'] = $result;
-        // header("Location: dashboard.php");
+        header("Location: dashboard.php");
     } else if($resultHashed) {
         $_SESSION['username'] = $resultHashed;
-        // header("Location: dashboard.php");
+        header("Location: dashboard.php");
     } else{
-        // header("Location: error.php");
+        header("Location: error.php");
     }
 };
 
@@ -41,6 +41,4 @@ function getUserData($userID, $conexao){
     foreach($fetch as $row){
         $_SESSION[$row[2]] = $row[3];
     }
-    // print_r($_SESSION);
-    // echo $_SESSION['Recurso Chave'];
 }
